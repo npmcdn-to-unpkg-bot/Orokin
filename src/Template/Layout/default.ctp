@@ -17,7 +17,8 @@
     <!-- Bootstrap -->
     <?= $this->Html->css('/assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>
     <!-- FontAwesome -->
-    <?= $this->Html->css('/assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>
+    <!-- $this->Html->css('/assets/bower_components/font-awesome/css/font-awesome.min.css'); -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Owl Carousel -->
     <?= $this->Html->css('/assets/bower_components/owl.carousel/dist/assets/owl.carousel.min.css'); ?>
