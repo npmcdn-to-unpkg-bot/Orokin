@@ -1,0 +1,31 @@
+/**
+ *
+ * Type your custom styles
+ *
+ */
+
+
+
+/**
+ * Additional styles for Anime demo
+ */
+/* Wide container */
+.content-wrap {
+    max-width: none;
+}
+
+.btn::before,
+.full .countdown .countdown-item > span + span::after,
+.countdown.style-1 .countdown-item > span + span::after{
+    -webkit-transform: skew(-7deg);
+    -ms-transform: skew(-7deg);
+    -o-transform: skew(-7deg);
+    transform: skew(-7deg);
+}
+
+.angled-img .img > img {
+    -webkit-transform: skew(7deg) scale(1.098);
+    -ms-transform: skew(7deg) scale(1.098);
+    -o-transform: skew(7deg) scale(1.098);
+    transform: skew(7deg) scale(1.098);
+}
