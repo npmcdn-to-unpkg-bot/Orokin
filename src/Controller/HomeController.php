@@ -22,8 +22,9 @@ class HomeController extends AppController
         //VoidTraders TEST
 
         //Autorise les requêtes ajax sur la méthode
+
         //$this->request->allowMethod(['ajax']);
-        Marcuss est moche
+
         //On récupère toutes les informations du flux de warframe
         $json = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
 
