@@ -191,9 +191,9 @@
         <div class="info container align-center">
             <div>
                 <h2>Black Rock Shooter II</h2>
-                <h3>Exclusively for Mac and Windows</h3>
 
                 <!-- See countdown init in bottom of the page -->
+                <!-- Problème avec heure d'été -->
                 <div class="countdown style-1 h2" data-end="" data-timezone="EST"></div>
             </div>
         </div>
