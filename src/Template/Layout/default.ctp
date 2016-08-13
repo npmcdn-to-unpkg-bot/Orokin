@@ -134,52 +134,22 @@
                     <img class="alignnone size-full" src="http://i.imgur.com/SZOtqEY.png" alt="LogoBig">
                 </div>
             </div>
-        </div>
+        </div>ss
     </section>
     <!-- /Banner -->
 
-    <!-- Links with Images -->
     <div class="container mt-60">
-        <div class="youplay-carousel" data-stage-padding="0" data-item-padding="15" data-autoplay="8000">
-            <a class="angled-img" href="index.html#preorder">
-                <div class="img">
-                    <?= $this->Html->image('/assets/images/game-cos-1-500x375.jpg', ['alt' => '']); ?>
-                </div>
-                <div class="bottom-info">
-                    <h4>Preorder Today</h4>
-                    <div>We will send you Early Edition of Call of Shooter.</div>
-                </div>
-            </a>
-            <a class="angled-img" href="blog.html">
-                <div class="img">
-                    <?= $this->Html->image('/assets/images/game-cos-6-500x375.jpg', ['alt' => '']); ?>
-                </div>
-                <div class="bottom-info">
-                    <h4>Our News</h4>
-                    <div>Get news from the source, and you don't miss anything important.</div>
-                </div>
-            </a>
-            <a class="angled-img" href="forums.html">
-                <div class="img">
-                    <?= $this->Html->image('/assets/images/game-cos-3-500x375.jpg', ['alt' => '']); ?>
-                </div>
-                <div class="bottom-info">
-                    <h4>Join Community</h4>
-                    <div>Be the part of huge gaming community.</div>
-                </div>
-            </a>
-            <a class="angled-img" href="https://twitter.com/nkdevv" target="_blank">
-                <div class="img">
-                    <?= $this->Html->image('/assets/images/game-cos-4-500x375.jpg', ['alt' => '']); ?>
-                </div>
-                <div class="bottom-info">
-                    <h4>Follow on Twitter</h4>
-                    <div>We love and use this social network for smart people.</div>
-                </div>
-            </a>
-        </div>
+        <?php foreach ($datas->{'Alerts'} as $key=>$value){
+            echo $datas->{'Alerts'}[$key]->{'Activation'}->{'sec'};
+            echo $datas->{'Alerts'}[$key]->{'Expiry'}->{'sec'};
+            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'missionType'};
+            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'faction'};
+            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'location'};
+            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'minEnemyLevel'};
+            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'maxEnemyLevel'};
+            echo '<br>';
+        } ?>
     </div>
-    <!-- /Links with Images -->
 
 
     <!-- Realistic Battles -->
@@ -194,7 +164,7 @@
 
                 <!-- See countdown init in bottom of the page -->
                 <!-- Problème avec heure d'été -->
-                <div class="countdown style-1 h2" data-end="" data-timezone="EST"></div>
+                <div class="countdown style-1 h2" data-end="2017-02-18 20:00" data-timezone="EST"></div>
             </div>
         </div>
     </section>
@@ -452,6 +422,7 @@
 
 
 <script type="text/javascript">
+    /*
         function warJson() {
             $.post('Home/warJson',function (response) {
                 $(".countdown").attr('data-end', response.trader);
@@ -483,40 +454,31 @@
             }, 'json');
         }
         warJson();
-        /*
-        function warJson() {
-            $.post('Home/warJson',function (response) {
-                console.log(response.trader);
-                $(".countdown").attr('data-end', response.trader);
-            }, 'json');
-        }
-        function timerTrader () {
-            $(".countdown").each(function () {
-                $(this).countdown($(this).attr('data-end'), function (event) {
-                    $(this).html(
-                        event.strftime([
-                            '<div class="countdown-item">',
-                            '<span>Days</span>',
-                            '<span><span>%D</span></span>',
-                            '</div>',
-                            '<div class="countdown-item">',
-                            '<span>Hours</span>',
-                            '<span><span>%H</span></span>',
-                            '</div>',
-                            '<div class="countdown-item">',
-                            '<span>Minutes</span>',
-                            '<span><span>%M</span></span>',
-                            '</div>',
-                            '<div class="countdown-item">',
-                            '<span>Seconds</span>',
-                            '<span><span>%S</span></span>',
-                            '</div>'
-                        ].join(''))
-                    );
-                });
-            });
-        }
         */
+        $(".countdown").each(function () {
+            $(this).countdown($(this).attr('data-end'), function (event) {
+                $(this).html(
+                    event.strftime([
+                        '<div class="countdown-item">',
+                        '<span>Days</span>',
+                        '<span><span>%D</span></span>',
+                        '</div>',
+                        '<div class="countdown-item">',
+                        '<span>Hours</span>',
+                        '<span><span>%H</span></span>',
+                        '</div>',
+                        '<div class="countdown-item">',
+                        '<span>Minutes</span>',
+                        '<span><span>%M</span></span>',
+                        '</div>',
+                        '<div class="countdown-item">',
+                        '<span>Seconds</span>',
+                        '<span><span>%S</span></span>',
+                        '</div>'
+                    ].join(''))
+                );
+            });
+        });
 </script>
 
 </body>
