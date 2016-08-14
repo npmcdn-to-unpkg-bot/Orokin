@@ -157,101 +157,16 @@
     <section class="youplay-banner youplay-banner-parallax mid" id="exclusive">
         <div class="image" style="background-image: url('http://i.imgur.com/lPpEwSu.png');" data-speed="-0.5">
         </div>
-
         <div class="info container align-center">
             <div>
                 <h2>Black Rock Shooter II</h2>
 
                 <!-- See countdown init in bottom of the page -->
-                <!-- Problème avec heure d'été -->
                 <div class="countdown style-1 h2" data-end="2017-02-18 10:00:30" data-timezone="EST"></div>
             </div>
         </div>
     </section>
     <!-- /Realistic Battles -->
-
-
-    <!-- The True Emotions -->
-    <h2 class="container h1" id="news">Recent News</h2>
-    <section class="youplay-news container">
-        <!-- Single News Block -->
-        <div class="news-one">
-            <div class="row vertical-gutter">
-                <div class="col-md-4">
-                    <a href="blog-post.html" class="angled-img">
-                        <div class="img">
-                            <img src="assets/images/game-cos-1-500x375.jpg" alt="">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <div class="clearfix">
-                        <h3 class="h2 pull-left m-0"><a href="blog-post.html">Meet on Apple Devices - Black Rock Shooter</a></h3>
-                        <span class="date pull-right"><i class="fa fa-calendar"></i> May 14, 2016</span>
-                    </div>
-                    <div class="tags">
-                        <i class="fa fa-tags"></i>  <a href="#">Release</a>, <a href="#">Black Rock Shooter</a>, <a href="#">iOs</a>, <a href="#">Apple</a>
-                    </div>
-                    <div class="description">
-                        <p>
-                            Arcu curabitur magna lorem Luctus. Curabitur eleifend facilisi vulputate nam. Primis magna fringilla sed nunc felis cubilia suscipit adipiscing euismod eros cursus adipiscing dis vel etiam. Per id malesuada facilisi odio.
-                        </p>
-                    </div>
-                    <a href="#" class="btn read-more pull-left">Read More</a>
-                </div>
-            </div>
-        </div>
-        <!-- /Single News Block -->
-
-        <!-- Single News Block -->
-        <div class="news-one">
-            <div class="row vertical-gutter">
-                <div class="col-md-4">
-                    <a href="#" class="angled-img">
-                        <div class="img">
-                            <img src="assets/images/game-cos-2-500x375.jpg" alt="">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-8">
-                    <div class="clearfix">
-                        <h3 class="h2 pull-left m-0"><a href="#">Closed Beta  Started Today - Black Rock Shooter II</a></h3>
-                        <span class="date pull-right"><i class="fa fa-calendar"></i> April 24, 2016</span>
-                    </div>
-                    <div class="tags">
-                        <i class="fa fa-tags"></i>  <a href="#">Black Rock Shooter II</a>, <a href="#">Beta</a>, <a href="#">Start Today</a>
-                    </div>
-                    <div class="description">
-                        <p>Curabitur. Magnis sapien metus euismod a sociosqu ac phasellus non. Sociosqu, lorem. Curabitur. Adipiscing penatibus tempus habitant, porttitor cum sed.</p>
-
-                        <p>Condimentum justo semper semper elementum. Nulla rhoncus ac eros aliquet praesent massa sed ante sociis vivamus. Vulputate lobortis turpis hymenaeos. Ac ipsum arcu sollicitudin lorem feugiat ullamcorper. Tempus donec iaculis.</p>
-                    </div>
-                    <a href="#" class="btn read-more pull-left">Read More</a>
-                </div>
-            </div>
-        </div>
-        <!-- /Single News Block -->
-    </section>
-    <!-- /The True Emotions -->
-
-
-    <!-- Preorder -->
-    <section class="youplay-banner big mt-40">
-        <div class="image" style="background-image: url('http://i.imgur.com/lPpEwSu.png')"></div>
-        <div class="info">
-            <div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h2 class="fs-40">Realistic Battles</h2>
-                            <p class="lead">Eleifend sem ipsum conubia euismod potenti ante ad sem sed, dictumst hymenaeos torquent quis. Class leo. Odio orci velit nulla habitasse conubia tempor eleifend dui suscipit mauris eget mollis</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /Preorder -->
 
     <!-- Footer -->
     <footer class="youplay-footer">
@@ -465,7 +380,7 @@
 
         function warjson(time) {
             $.post('Home/warjson', { time: time },function (datas) {
-                alert('test');
+                $(".alerts tbody").html('');
                 $.each(datas.datas.Alerts, function (key, value) {
                     var tr = $('<tr/>');
                     var td = $('<td/>');
@@ -506,27 +421,40 @@
                     });
 
                     if(value.Activation.sec <= datas.timenow){
-                        var timeExpiry = $('<span class="Alerttime"/>').text('Fini dans: ' + value.Expiry.usec);
+                        var timeExpiry = $('<span class="Alerttime"/>').attr('data-end', value.Expiry.usec).text('Fini dans: ' + value.Expiry.usec);
                         td.append(timeExpiry);
                         td.append('<br/>');
                     }
                     else {
-                        var timeActivation = $('<span class="Alerttime"/>').text('Commence dans: ' + value.Activation.usec);
+                        var timeActivation = $('<span class="Alerttime"/>').attr('data-end', value.Activation.usec).text('Commence dans: ' + value.Activation.usec);
                         td.append(timeActivation);
                         td.append('<br/>');
                     }
                     td.appendTo(tr);
                     tr.appendTo(".alerts tbody");
                 });
-                setTimeout("warjson()",5000);
-
+                $(".Alerttime").each(function () {
+                    $(this).countdown($(this).attr('data-end'), function (event) {
+                        $(this).html(
+                            event.strftime([
+                                '<span><span>%D</span></span>',
+                                '<span>J </span>',
+                                '<span><span>%H</span></span>',
+                                '<span>h </span>',
+                                '<span><span>%M</span></span>',
+                                '<span>m </span>',
+                                '<span><span>%S</span></span>',
+                                '<span>s </span>',
+                            ].join(''))
+                        );
+                    });
+                });
+                setTimeout("warjson(time)",5000);
             }, 'json');
         }
 
         warjson(time);
-
-/*
-
+        /*
         $(".countdown").each(function () {
             $(this).countdown($(this).attr('data-end'), function (event) {
                 $(this).html(
@@ -551,7 +479,7 @@
                 );
             });
         });
-        */
+*/
 </script>
 
 </body>

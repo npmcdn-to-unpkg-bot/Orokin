@@ -23,9 +23,3 @@
     transform: skew(-7deg);
 }
 
-.angled-img .img > img {
-    -webkit-transform: skew(7deg) scale(1.098);
-    -ms-transform: skew(7deg) scale(1.098);
-    -o-transform: skew(7deg) scale(1.098);
-    transform: skew(7deg) scale(1.098);
-}

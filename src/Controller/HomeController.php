@@ -30,12 +30,11 @@ class HomeController extends AppController
         //Alerts
         foreach ($json->{'Alerts'} as $key=>$value){
             $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} = $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} + $time;
-            $json->{'Alerts'}[$key]->{'Activation'}->{'usec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Activation'}->{'sec'});
+            $json->{'Alerts'}[$key]->{'Activation'}->{'usec'} = date("Y-m-d H:i:s", $json->{'Alerts'}[$key]->{'Activation'}->{'sec'});
             $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} = $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} + $time;
-            $json->{'Alerts'}[$key]->{'Expiry'}->{'usec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'});
+            $json->{'Alerts'}[$key]->{'Expiry'}->{'usec'} = date("Y-m-d H:i:s", $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'});
         }
 
-        $this->set('test2', $time);
         $this->set('datas', $json);
         $this->set('timenow', time() + $time);
 
