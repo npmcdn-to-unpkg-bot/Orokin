@@ -1,0 +1,14 @@
+{
+  "FC_GRINEER": {
+    "value": "Grinner"
+  }
+  , "FC_CORPUS": {
+    "value": "Corpus"
+  }
+  , "FC_INFESTATION": {
+    "value": "Infestés"
+  }
+  , "FC_CORRUPTED": {
+    "value": "Corrompus"
+  }
+}
