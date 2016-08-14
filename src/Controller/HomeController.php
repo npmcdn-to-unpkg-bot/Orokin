@@ -10,68 +10,39 @@ namespace App\Controller;
 
 use App\Controller;
 use Cake\Cache\Cache;
+use Cake\Event\Event;
 
 class HomeController extends AppController
 {
     public function index()
     {
-        //Heure été/hiver
-        $date = date("Y-m-d H:i", time());
-        $datezone = date_create($date, timezone_open('Europe/Paris'));
-        $decalage = date_offset_get($datezone);
 
-        //On récupère toutes les informations du flux de warframe
-        $json = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
-
-        //Alerts
-        foreach ($json->{'Alerts'} as $key=>$value){
-            $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} + $decalage);
-            $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} + $decalage);
-        }
-
-        $this->set('datas', $json);
-        $this->set('timenow', $date);
     }
 
     public function warjson()
     {
-        //Heure été/hiver
-        $date = date("Y-m-d H:i", time());
-        $datezone = date_create($date, timezone_open('Europe/Paris'));
-        $decalage = date_offset_get($datezone);
+        $time = $this->request->data['time'];
+        $time = intval($time);
 
         //On récupère toutes les informations du flux de warframe
         $json = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
 
         //Alerts
         foreach ($json->{'Alerts'} as $key=>$value){
-            $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} + $decalage);
-            $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} + $decalage);
+            $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} = $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} + $time;
+            $json->{'Alerts'}[$key]->{'Activation'}->{'usec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Activation'}->{'sec'});
+            $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} = $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} + $time;
+            $json->{'Alerts'}[$key]->{'Expiry'}->{'usec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'});
         }
 
+        $this->set('test2', $time);
         $this->set('datas', $json);
-        $this->set('timenow', $date);
-        //VoidTraders TEST
+        $this->set('timenow', time() + $time);
 
-        //Autorise les requêtes ajax sur la méthode
-        //$this->request->allowMethod(['ajax']);
-
-        //On récupère toutes les informations du flux de warframe
-        //$json = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
-        
         //Mise en cache des données
         //Cache::write('data', $json);
 
         //Récupération des données en cache
         //$data = Cache::read('data');
-
-        //On récupère la date(sec) de la prochaine venu du Marchand
-        //$data = $json->{'VoidTraders'}['0']->{'Expiry'}->{'sec'};
-
-        //On formate la date (2000-01-10 00:00)
-        //$data = date("Y-m-d H:i", $data);
-
-        //On envoie dans la vue.
-        //$this->set('datas', $json);
     }
 }

@@ -164,7 +164,7 @@
 
                 <!-- See countdown init in bottom of the page -->
                 <!-- Problème avec heure d'été -->
-                <div class="countdown style-1 h2" data-end="2017-02-18 20:00" data-timezone="EST"></div>
+                <div class="countdown style-1 h2" data-end="2017-02-18 10:00:30" data-timezone="EST"></div>
             </div>
         </div>
     </section>
@@ -399,6 +399,7 @@
 <!-- Youplay -->
 <?= $this->Html->script('/assets/youplay/js/youplay.min.js'); ?>
 <!-- init youplay -->
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
 <script>
     if(typeof youplay !== 'undefined') {
         youplay.init({
@@ -455,9 +456,16 @@
         }
         warJson();
         */
-        function warjson() {
-            $.post('Home/warjson',function (datas) {
 
+        var dt = new Date();
+        var time = dt.getTimezoneOffset();
+        time = time*-60;
+
+
+
+        function warjson(time) {
+            $.post('Home/warjson', { time: time },function (datas) {
+                alert('test');
                 $.each(datas.datas.Alerts, function (key, value) {
                     var tr = $('<tr/>');
                     var td = $('<td/>');
@@ -496,33 +504,29 @@
                         td.append(reward);
                         td.append('<br/>');
                     });
+
                     if(value.Activation.sec <= datas.timenow){
-                        var timeExpiry = $('<span class="Alerttime"/>').text(value.Expiry.sec);
+                        var timeExpiry = $('<span class="Alerttime"/>').text('Fini dans: ' + value.Expiry.usec);
                         td.append(timeExpiry);
                         td.append('<br/>');
                     }
                     else {
-                        var timeActivation = $('<span class="Alerttime"/>').text('Commence dans:' + value.Activation.sec);
+                        var timeActivation = $('<span class="Alerttime"/>').text('Commence dans: ' + value.Activation.usec);
                         td.append(timeActivation);
                         td.append('<br/>');
                     }
-                    console.log(datas.timenow);
-                    console.log(value.Activation.sec);
-                    //td.text(value.Activation.sec);
-                    //td.text(value.Expiry.sec);
                     td.appendTo(tr);
                     tr.appendTo(".alerts tbody");
                 });
+                setTimeout("warjson()",5000);
 
-
-
-                //setTimeout("warjson()",5000);
             }, 'json');
         }
-        warjson();
 
+        warjson(time);
 
-    /*
+/*
+
         $(".countdown").each(function () {
             $(this).countdown($(this).attr('data-end'), function (event) {
                 $(this).html(
@@ -546,7 +550,8 @@
                     ].join(''))
                 );
             });
-        });*/
+        });
+        */
 </script>
 
 </body>
