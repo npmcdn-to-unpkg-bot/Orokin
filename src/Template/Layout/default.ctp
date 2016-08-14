@@ -134,21 +134,21 @@
                     <img class="alignnone size-full" src="http://i.imgur.com/SZOtqEY.png" alt="LogoBig">
                 </div>
             </div>
-        </div>ss
+        </div>
     </section>
     <!-- /Banner -->
 
-    <div class="container mt-60">
-        <?php foreach ($datas->{'Alerts'} as $key=>$value){
-            echo $datas->{'Alerts'}[$key]->{'Activation'}->{'sec'};
-            echo $datas->{'Alerts'}[$key]->{'Expiry'}->{'sec'};
-            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'missionType'};
-            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'faction'};
-            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'location'};
-            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'minEnemyLevel'};
-            echo $datas->{'Alerts'}[$key]->{'MissionInfo'}->{'maxEnemyLevel'};
-            echo '<br>';
-        } ?>
+    <div class="container">
+        <div class="col-md-6">
+            <h2>Alerts</h2>
+            <table class="table table-bordered table-hover alerts">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+
+        </div>
     </div>
 
 
@@ -455,6 +455,74 @@
         }
         warJson();
         */
+        function warjson() {
+            $.post('Home/warjson',function (datas) {
+
+                $.each(datas.datas.Alerts, function (key, value) {
+                    var tr = $('<tr/>');
+                    var td = $('<td/>');
+                    var nom = $('<span class="AlertmissionNom"/>').text(value.MissionInfo.location);
+                    td.append(nom);
+                    td.append('<br/>');
+                    var type = $('<span class="AlertmissionType"/>').text(value.MissionInfo.missionType);
+                    td.append(type);
+                    td.append('<br/>');
+                    if(value.MissionInfo.maxWaveNum) {
+                        var wave = $('<span class="AlertWave"/>').text(value.MissionInfo.maxWaveNum + " vagues");
+                        td.append(wave);
+                        td.append('<br/>');
+                    }
+                    var faction = $('<span class="Alertfaction"/>').text(value.MissionInfo.faction);
+                    td.append(faction);
+                    td.append('<br/>');
+                    var level = $('<span class="Alertlevel"/>').text(value.MissionInfo.minEnemyLevel + " - " + value.MissionInfo.maxEnemyLevel);
+                    td.append(level);
+                    td.append('<br/>');
+                    if(value.MissionInfo.archwingRequired == true){
+                        var archwing = $('<span class="Alertarchwing"/>').text('Archwing');
+                        td.append(archwing);
+                        td.append('<br/>');
+                    }
+                    var credit = $('<span class="Alertcredit"/>').text(value.MissionInfo.missionReward.credits + ' crédits');
+                    td.append(credit);
+                    td.append('<br/>');
+                    $.each(value.MissionInfo.missionReward.items, function (key, value){
+                        var reward = $('<span class="Alertreward"/>').text(value);
+                        td.append(reward);
+                        td.append('<br/>');
+                    });
+                    $.each(value.MissionInfo.missionReward.countedItems, function (key, value){
+                        var reward = $('<span class="Alertreward"/>').text(value.ItemType + " " + value.ItemCount);
+                        td.append(reward);
+                        td.append('<br/>');
+                    });
+                    if(value.Activation.sec <= datas.timenow){
+                        var timeExpiry = $('<span class="Alerttime"/>').text(value.Expiry.sec);
+                        td.append(timeExpiry);
+                        td.append('<br/>');
+                    }
+                    else {
+                        var timeActivation = $('<span class="Alerttime"/>').text('Commence dans:' + value.Activation.sec);
+                        td.append(timeActivation);
+                        td.append('<br/>');
+                    }
+                    console.log(datas.timenow);
+                    console.log(value.Activation.sec);
+                    //td.text(value.Activation.sec);
+                    //td.text(value.Expiry.sec);
+                    td.appendTo(tr);
+                    tr.appendTo(".alerts tbody");
+                });
+
+
+
+                //setTimeout("warjson()",5000);
+            }, 'json');
+        }
+        warjson();
+
+
+    /*
         $(".countdown").each(function () {
             $(this).countdown($(this).attr('data-end'), function (event) {
                 $(this).html(
@@ -478,7 +546,7 @@
                     ].join(''))
                 );
             });
-        });
+        });*/
 </script>
 
 </body>

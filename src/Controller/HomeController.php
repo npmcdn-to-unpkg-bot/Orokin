@@ -17,8 +17,8 @@ class HomeController extends AppController
     {
         //Heure été/hiver
         $date = date("Y-m-d H:i", time());
-        $date = date_create($date, timezone_open('Europe/Paris'));
-        $decalage = date_offset_get($date);
+        $datezone = date_create($date, timezone_open('Europe/Paris'));
+        $decalage = date_offset_get($datezone);
 
         //On récupère toutes les informations du flux de warframe
         $json = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
@@ -30,11 +30,27 @@ class HomeController extends AppController
         }
 
         $this->set('datas', $json);
-        $this->set('time', $decalage);
+        $this->set('timenow', $date);
     }
 
-    public function warJson()
+    public function warjson()
     {
+        //Heure été/hiver
+        $date = date("Y-m-d H:i", time());
+        $datezone = date_create($date, timezone_open('Europe/Paris'));
+        $decalage = date_offset_get($datezone);
+
+        //On récupère toutes les informations du flux de warframe
+        $json = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
+
+        //Alerts
+        foreach ($json->{'Alerts'} as $key=>$value){
+            $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Activation'}->{'sec'} + $decalage);
+            $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} = date("Y-m-d H:i", $json->{'Alerts'}[$key]->{'Expiry'}->{'sec'} + $decalage);
+        }
+
+        $this->set('datas', $json);
+        $this->set('timenow', $date);
         //VoidTraders TEST
 
         //Autorise les requêtes ajax sur la méthode
