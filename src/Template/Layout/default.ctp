@@ -393,7 +393,10 @@
                     if(value.MissionInfo.maxWaveNum) {
                         var wave;
                         if(value.MissionInfo.missionType == 'Espionage'){
-                            wave = $('<span class="AlertWave"/>').text("Minimum " + value.MissionInfo.maxWaveNum + " extractions de réussite");
+                            wave = $('<span class="AlertWave"/>').text("Minimum " + value.MissionInfo.maxWaveNum + " données");
+                        }
+                        else if(value.MissionInfo.missionType == 'Survie') {
+                            wave = $('<span class="AlertWave"/>').text(value.MissionInfo.maxWaveNum + " minutes");
                         }
                         else {
                             wave = $('<span class="AlertWave"/>').text(value.MissionInfo.maxWaveNum + " vagues");
@@ -420,7 +423,7 @@
                     var credit = $('<span class="Alertcredit"/>').text(value.MissionInfo.missionReward.credits + ' crédits');
                     td.append(credit);
                     td.append('<br/>');
-                    $.each(value.MissionInfo.missionReward.items, function (key, value){
+                    $.each(value.MissionInfo.missionReward['items'], function (key, value){
                         var reward = $('<span class="AlertNoCountedItem"/>').text(value);
                         td.append(reward);
                         td.append('<br/>');

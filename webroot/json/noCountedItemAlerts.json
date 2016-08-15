@@ -1,47 +1,68 @@
 {
-  "/Lotus/StoreItems/Types/Recipes/WarframeRecipes/TrapperChassisBlueprint" : {
-    "value" : "Shéma Chassis Vauban"
+  "/Lotus/StoreItems/Types/Recipes/WarframeRecipes/TrapperChassisBlueprint": {
+    "value" : "Schéma Chassis Vauban"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl1ModFuser" : {
+  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl1ModFuser": {
     "value" : "Coeur de fusion R1"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl2ModFuser" : {
+  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl2ModFuser": {
     "value" : "Coeur de fusion R2"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl3ModFuser" : {
+  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl3ModFuser": {
     "value" : "Coeur de fusion R3"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl5ModFuser" : {
+  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl4ModFuser": {
+    "value" : "Coeur de fusion R4"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl5ModFuser": {
     "value" : "Coeur de fusion R5"
   },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessVaubanAltHelmetBlueprint" : {
-    "value" : "Shéma Casque Vauban Esprit"
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessVaubanAltHelmetBlueprint": {
+    "value" : "Schéma Casque Vauban Esprit"
   },
-  "/Lotus/StoreItems/Types/Recipes/Weapons/GlaiveBlueprint" : {
-    "value" : "Shéma Glaive"
+  "/Lotus/StoreItems/Types/Recipes/Weapons/GlaiveBlueprint": {
+    "value" : "Schéma Glaive"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/StunningSpeedMod" : {
+  "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/StunningSpeedMod": {
     "value" : "Vitesse Hallucinante"
   },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessExcaliburAltHelmetBlueprint" : {
-    "value" : "Shéma Casque Excalibur Avalon"
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessExcaliburAltHelmetBlueprint": {
+    "value" : "Schéma Casque Excalibur Avalon"
   },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2AshAltHelmetBlueprint" : {
-    "value" : "Shéma Casque Ash Locust"
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2AshAltHelmetBlueprint": {
+    "value" : "Schéma Casque Ash Locust"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerEnemyRadarAuraMod" : {
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerEnemyRadarAuraMod": {
     "value" : "Radar Ennemi"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/BlazeMod" : {
+  "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/BlazeMod": {
     "value" : "Flamboiement"
   },
-  "/Lotus/StoreItems/Types/Recipes/Weapons/HeatDaggerBlueprint" : {
+  "/Lotus/StoreItems/Types/Recipes/Weapons/HeatDaggerBlueprint": {
     "value" : "Dague de Chaleur"
   },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/SandmanAltHelmetBlueprint" : {
-    "value" : "Shéma Casque Inaros Anubis"
+  "/Lotus/StoreItems/Types/Recipes/Helmets/SandmanAltHelmetBlueprint": {
+    "value" : "Schéma Casque Inaros Anubis"
   },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2NyxAltHelmetBlueprint" : {
-    "value" : "Shéma Casque Nyx Vespa"
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2NyxAltHelmetBlueprint": {
+    "value" : "Schéma Casque Nyx Vespa"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/ValkyrBastetHelmetBlueprint": {
+    "value" : "Schéma Casque Valkyr Bastet"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/Skins/DaggerAxeBlueprint": {
+    "value" : "Schéma Aspect Scindo Hache-Dague"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/EnemyArmorReductionAuraMod": {
+    "value" : "Projection Corrosive"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessNyxAltHelmetBlueprint": {
+    "value" : "Schéma Casque Nyx Menticide"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessTrinityAltHelmetBlueprint": {
+    "value" : "Schéma Casque Trinity Aura"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/ReloadSpeedPunchThroughMod": {
+    "value" : "Furie Vangeresse"
   }
 }
