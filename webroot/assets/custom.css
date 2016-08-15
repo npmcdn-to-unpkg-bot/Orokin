@@ -23,3 +23,18 @@
     transform: skew(-7deg);
 }
 
+.alert::before {
+    position: absolute;
+    transform: skew(-7deg);
+}
+
+.label::before {
+    transform: skew(-7deg);
+}
+
+.label-success::before {
+    background: #007E29;
+}
+.label-danger::before {
+    background: #B00000;
+}

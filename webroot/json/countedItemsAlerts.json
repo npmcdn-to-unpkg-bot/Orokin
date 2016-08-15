@@ -19,5 +19,8 @@
   },
   "/Lotus/Types/Items/MiscItems/Rubedo" : {
     "value" : "Rubedo"
+  },
+  "/Lotus/Types/Items/MiscItems/Salvage" : {
+    "value" : "Récupération"
   }
 }

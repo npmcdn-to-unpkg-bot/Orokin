@@ -76,9 +76,12 @@ class HomeController extends AppController
                 }
             }
 
-            //Ne fonctionne pas :'(
+            //Change le nom des rewards non numérotés
             if (isset($value->{'MissionInfo'}->{'missionReward'}->{'items'})){
+                foreach ($value->{'MissionInfo'}->{'missionReward'}->{'items'} as $key4) {
                     foreach ($noCountedItemAlerts as $key3 => $reward2) {
+                        if ($value->{'MissionInfo'}->{'missionReward'}->{'items'}[$key4] == $key3) {
+                            $value->{'MissionInfo'}->{'missionReward'}->{'items'}[$key4] = $reward2->{'value'};
                         }
                     }
                 }

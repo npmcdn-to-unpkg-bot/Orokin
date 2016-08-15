@@ -147,7 +147,23 @@
             </table>
         </div>
         <div class="col-md-6">
-
+            <h2>Alerts</h2>
+            <div class="alert">
+                <span class="label label-success" style="float: right;font-weight: bold;font-size: 13px;">00J 01h 20m 53s</span>
+                <span class="label label-danger" style="text-transform: uppercase;font-weight: bold;font-size: 11px;">Cauchemar</span><span><strong> Proteus</strong> (Neptune)</span>
+                <br/>
+                <span>Interception</span> | <span>2 vagues</span> | <span>Corpus</span> | <span>21 - 23</span>
+                <br/>
+                <span class="label label-warning" style="font-weight: bold;font-size: 11px;">300 Récupérations</span><span>18500 crédits</span>
+            </div>
+            <div class="alert">
+                <span class="label label-success" style="float: right;font-weight: bold;font-size: 13px;">00J 00h 58m 12s</span>
+                <span class="label label-primary" style="text-transform: uppercase;font-weight: bold;font-size: 11px;">Archwing</span><span><strong> Proteus</strong> (Neptune)</span>
+                <br/>
+                <span>Interception</span> | <span>2 vagues</span> | <span>Corpus</span> | <span>21 - 23</span>
+                <br/>
+                <span>18500 crédits</span>
+            </div>
         </div>
     </div>
 
