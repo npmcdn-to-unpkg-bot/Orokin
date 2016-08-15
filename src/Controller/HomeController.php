@@ -64,7 +64,7 @@ class HomeController extends AppController
                 }
             }
 
-            //Change le nom des rewards
+            //Change le nom des rewards non numérotés
             if (isset($value->{'MissionInfo'}->{'missionReward'}->{'countedItems'})){
                 foreach ($value->{'MissionInfo'}->{'missionReward'}->{'countedItems'} as $value2) {
                     foreach ($countedItems as $key2 => $reward) {
@@ -75,6 +75,8 @@ class HomeController extends AppController
                 }
             }
 
+            //Change le nom des rewards numérotés
+            //Ne fonctionne pas :'(
             if (isset($value->{'MissionInfo'}->{'missionReward'}->{'items'})){
                 foreach ($value->{'MissionInfo'}->{'missionReward'}->{'items'} as $item) {
                     foreach ($noCountedItemAlerts as $key3 => $reward2) {
