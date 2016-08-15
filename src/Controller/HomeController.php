@@ -16,8 +16,7 @@ class HomeController extends AppController
 {
     public function index()
     {
-        $alljson = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
-        $this->set('datas', $alljson);
+
     }
 
     public function warjson()
@@ -33,7 +32,8 @@ class HomeController extends AppController
         $nodesjson = json_decode(file_get_contents('./json/solNodes.json'));
         $typesjson = json_decode(file_get_contents('./json/missionTypes.json'));
         $factionjson = json_decode(file_get_contents('./json/factionsData.json'));
-        $rewardjson = json_decode(file_get_contents('./json/rewardAlerts.json'));
+        $countedItems = json_decode(file_get_contents('./json/countedItemsAlerts.json'));
+        $noCountedItemAlerts = json_decode(file_get_contents('./json/noCountedItemAlerts.json'));
 
 
         //Alerts
@@ -67,7 +67,7 @@ class HomeController extends AppController
             //Change le nom des rewards
             if (isset($value->{'MissionInfo'}->{'missionReward'}->{'countedItems'})){
                 foreach ($value->{'MissionInfo'}->{'missionReward'}->{'countedItems'} as $value2) {
-                    foreach ($rewardjson as $key2 => $reward) {
+                    foreach ($countedItems as $key2 => $reward) {
                         if ($value2->{'ItemType'} == $key2) {
                             $value2->{'ItemType'} = $reward->{'value'};
                         }
@@ -76,14 +76,15 @@ class HomeController extends AppController
             }
 
             if (isset($value->{'MissionInfo'}->{'missionReward'}->{'items'})){
-                foreach ($value->{'MissionInfo'}->{'missionReward'}->{'items'} as $value3) {
-                    foreach ($rewardjson as $key3 => $reward) {
-                        if ($value3 == $key3) {
-                            $value3 = $reward->{'value'};
+                foreach ($value->{'MissionInfo'}->{'missionReward'}->{'items'} as $item) {
+                    foreach ($noCountedItemAlerts as $key3 => $reward2) {
+                        if ($item == $key3) {
+                            $item = $reward2->{'value'};
                         }
                     }
                 }
             }
+
         }
 
         $this->set('datas', $alljson);

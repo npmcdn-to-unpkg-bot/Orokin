@@ -391,7 +391,13 @@
                     td.append(type);
                     td.append('<br/>');
                     if(value.MissionInfo.maxWaveNum) {
-                        var wave = $('<span class="AlertWave"/>').text(value.MissionInfo.maxWaveNum + " vagues");
+                        var wave;
+                        if(value.MissionInfo.missionType == 'Espionage'){
+                            wave = $('<span class="AlertWave"/>').text("Minimum " + value.MissionInfo.maxWaveNum + " extractions de réussite");
+                        }
+                        else {
+                            wave = $('<span class="AlertWave"/>').text(value.MissionInfo.maxWaveNum + " vagues");
+                        }
                         td.append(wave);
                         td.append('<br/>');
                     }
@@ -406,27 +412,32 @@
                         td.append(archwing);
                         td.append('<br/>');
                     }
+                    if(value.MissionInfo.nightmare == true){
+                        var nightmare = $('<span class="Alertnightmare"/>').text('Cauchemar');
+                        td.append(nightmare);
+                        td.append('<br/>');
+                    }
                     var credit = $('<span class="Alertcredit"/>').text(value.MissionInfo.missionReward.credits + ' crédits');
                     td.append(credit);
                     td.append('<br/>');
                     $.each(value.MissionInfo.missionReward.items, function (key, value){
-                        var reward = $('<span class="Alertreward"/>').text(value);
+                        var reward = $('<span class="AlertNoCountedItem"/>').text(value);
                         td.append(reward);
                         td.append('<br/>');
                     });
                     $.each(value.MissionInfo.missionReward.countedItems, function (key, value){
-                        var reward = $('<span class="Alertreward"/>').text(value.ItemType + " " + value.ItemCount);
+                        var reward = $('<span class="AlertCountedItem"/>').text(value.ItemCount + " " + value.ItemType);
                         td.append(reward);
                         td.append('<br/>');
                     });
 
                     if(value.Activation.sec <= datas.timenow){
-                        var timeExpiry = $('<span class="Alerttime"/>').attr('data-end', value.Expiry.usec).text('Fini dans: ' + value.Expiry.usec);
+                        var timeExpiry = $('<span class="Alerttime"/>').attr('data-end', value.Expiry.usec);
                         td.append(timeExpiry);
                         td.append('<br/>');
                     }
                     else {
-                        var timeActivation = $('<span class="Alerttime"/>').attr('data-end', value.Activation.usec).text('Commence dans: ' + value.Activation.usec);
+                        var timeActivation = $('<span class="Alerttime"/>').attr('data-end', value.Activation.usec);
                         td.append(timeActivation);
                         td.append('<br/>');
                     }

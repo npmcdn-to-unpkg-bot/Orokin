@@ -1,0 +1,23 @@
+{
+  "/Lotus/Types/Items/MiscItems/ArgonCrystal" : {
+    "value" : "Cristal d'Argon"
+  },
+  "/Lotus/Types/Items/MiscItems/ControlModule" : {
+    "value" : "Module de Controle"
+  },
+  "/Lotus/Types/Items/MiscItems/OxiumAlloy" : {
+    "value" : "Oxium"
+  },
+  "/Lotus/Types/Items/MiscItems/Ferrite" : {
+    "value" : "Ferrite"
+  },
+  "/Lotus/Types/Items/MiscItems/Alertium" : {
+    "value" : "Extrait de Nitain"
+  },
+  "/Lotus/Types/Items/MiscItems/Gallium" : {
+    "value" : "Gallium"
+  },
+  "/Lotus/Types/Items/MiscItems/Rubedo" : {
+    "value" : "Rubedo"
+  }
+}
