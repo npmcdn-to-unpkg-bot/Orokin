@@ -9,7 +9,7 @@
     "value" : "Oxium"
   },
   "/Lotus/Types/Items/MiscItems/Ferrite" : {
-    "value" : "Ferrite"
+    "value" : "Ferrites"
   },
   "/Lotus/Types/Items/MiscItems/Alertium" : {
     "value" : "Extrait de Nitain"
@@ -18,9 +18,12 @@
     "value" : "Gallium"
   },
   "/Lotus/Types/Items/MiscItems/Rubedo" : {
-    "value" : "Rubedo"
+    "value" : "Rubedos"
   },
   "/Lotus/Types/Items/MiscItems/Salvage" : {
-    "value" : "Récupération"
+    "value" : "Récupérations"
+  },
+  "/Lotus/Types/Items/MiscItems/AlloyPlate" : {
+    "value" : "Plaque d'Alliages"
   }
 }
