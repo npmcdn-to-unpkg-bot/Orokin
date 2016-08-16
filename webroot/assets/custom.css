@@ -38,3 +38,15 @@
 .label-danger::before {
     background: #B00000;
 }
+
+.alert-timer, .alert-reward {
+    float: right;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.alert-cauchemar, .alert-archwing {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+}

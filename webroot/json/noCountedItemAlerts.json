@@ -64,5 +64,8 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/ReloadSpeedPunchThroughMod": {
     "value" : "Furie Vangeresse"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/Skins/GrnAxeBlueprint": {
+    "value" : "Shéma Aspect Hache Manticore"
   }
 }

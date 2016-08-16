@@ -16,8 +16,8 @@ class HomeController extends AppController
 {
     public function index()
     {
-        //$alljson = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
-        //$this->set('datas', $alljson);
+        $alljson = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
+        $this->set('datas', $alljson);
     }
 
     public function warjson()
@@ -78,7 +78,7 @@ class HomeController extends AppController
 
             //Change le nom des rewards non numérotés
             if (isset($value->{'MissionInfo'}->{'missionReward'}->{'items'})){
-                foreach ($value->{'MissionInfo'}->{'missionReward'}->{'items'} as $key4) {
+                foreach ($value->{'MissionInfo'}->{'missionReward'}->{'items'} as $key4=>$value3) {
                     foreach ($noCountedItemAlerts as $key3 => $reward2) {
                         if ($value->{'MissionInfo'}->{'missionReward'}->{'items'}[$key4] == $key3) {
                             $value->{'MissionInfo'}->{'missionReward'}->{'items'}[$key4] = $reward2->{'value'};

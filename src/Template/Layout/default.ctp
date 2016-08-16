@@ -141,29 +141,10 @@
     <div class="container">
         <div class="col-md-6">
             <h2>Alerts</h2>
-            <table class="table table-bordered table-hover alerts">
-                <tbody>
-                </tbody>
-            </table>
+            <div class="col-Alerts"></div>
         </div>
         <div class="col-md-6">
-            <h2>Alerts</h2>
-            <div class="alert">
-                <span class="label label-success" style="float: right;font-weight: bold;font-size: 13px;">00J 01h 20m 53s</span>
-                <span class="label label-danger" style="text-transform: uppercase;font-weight: bold;font-size: 11px;">Cauchemar</span><span><strong> Proteus</strong> (Neptune)</span>
-                <br/>
-                <span>Interception</span> | <span>2 vagues</span> | <span>Corpus</span> | <span>21 - 23</span>
-                <br/>
-                <span class="label label-warning" style="font-weight: bold;font-size: 11px;">300 Récupérations</span><span>18500 crédits</span>
-            </div>
-            <div class="alert">
-                <span class="label label-success" style="float: right;font-weight: bold;font-size: 13px;">00J 00h 58m 12s</span>
-                <span class="label label-primary" style="text-transform: uppercase;font-weight: bold;font-size: 11px;">Archwing</span><span><strong> Proteus</strong> (Neptune)</span>
-                <br/>
-                <span>Interception</span> | <span>2 vagues</span> | <span>Corpus</span> | <span>21 - 23</span>
-                <br/>
-                <span>18500 crédits</span>
-            </div>
+
         </div>
     </div>
 
@@ -354,39 +335,6 @@
 
 
 <script type="text/javascript">
-    /*
-        function warJson() {
-            $.post('Home/warJson',function (response) {
-                $(".countdown").attr('data-end', response.trader);
-                $(".countdown").each(function () {
-                    $(this).countdown($(this).attr('data-end'), function (event) {
-                        $(this).html(
-                            event.strftime([
-                                '<div class="countdown-item">',
-                                '<span>Jours</span>',
-                                '<span><span>%D</span></span>',
-                                '</div>',
-                                '<div class="countdown-item">',
-                                '<span>Heures</span>',
-                                '<span><span>%H</span></span>',
-                                '</div>',
-                                '<div class="countdown-item">',
-                                '<span>Minutes</span>',
-                                '<span><span>%M</span></span>',
-                                '</div>',
-                                '<div class="countdown-item">',
-                                '<span>Secondes</span>',
-                                '<span><span>%S</span></span>',
-                                '</div>'
-                            ].join(''))
-                        );
-                    });
-                });
-                setTimeout("warJson()",5000);
-            }, 'json');
-        }
-        warJson();
-        */
 
         var dt = new Date();
         var time = dt.getTimezoneOffset();
@@ -396,74 +344,78 @@
 
         function warjson(time) {
             $.post('Home/warjson', { time: time },function (datas) {
-                $(".alerts tbody").html('');
+                $(".col-Alerts").html('');
                 $.each(datas.datas.Alerts, function (key, value) {
-                    var tr = $('<tr/>');
-                    var td = $('<td/>');
-                    var nom = $('<span class="AlertmissionNom"/>').text(value.MissionInfo.location);
-                    td.append(nom);
-                    td.append('<br/>');
-                    var type = $('<span class="AlertmissionType"/>').text(value.MissionInfo.missionType);
-                    td.append(type);
-                    td.append('<br/>');
-                    if(value.MissionInfo.maxWaveNum) {
-                        var wave;
-                        if(value.MissionInfo.missionType == 'Espionage'){
-                            wave = $('<span class="AlertWave"/>').text("Minimum " + value.MissionInfo.maxWaveNum + " données");
-                        }
-                        else if(value.MissionInfo.missionType == 'Survie') {
-                            wave = $('<span class="AlertWave"/>').text(value.MissionInfo.maxWaveNum + " minutes");
+                    if (datas.timenow <= value.Expiry.sec) {
+                        var alertwar = $('<div class="alert"/>');
+
+                        if (value.Activation.sec <= datas.timenow) {
+                            var timeExpiry = $('<span class="label label-success alert-timer expiry"/>').attr({ 'data-end': value.Expiry.usec, 'data': value.Expiry.sec});
+                            alertwar.append(timeExpiry);
                         }
                         else {
-                            wave = $('<span class="AlertWave"/>').text(value.MissionInfo.maxWaveNum + " vagues");
+                            var timeActivation = $('<span class="label label-default alert-timer activation">').attr({ 'data-end': value.Activation.usec, 'data': value.Activation.sec});
+                            alertwar.append(timeActivation);
                         }
-                        td.append(wave);
-                        td.append('<br/>');
-                    }
-                    var faction = $('<span class="Alertfaction"/>').text(value.MissionInfo.faction);
-                    td.append(faction);
-                    td.append('<br/>');
-                    var level = $('<span class="Alertlevel"/>').text(value.MissionInfo.minEnemyLevel + " - " + value.MissionInfo.maxEnemyLevel);
-                    td.append(level);
-                    td.append('<br/>');
-                    if(value.MissionInfo.archwingRequired == true){
-                        var archwing = $('<span class="Alertarchwing"/>').text('Archwing');
-                        td.append(archwing);
-                        td.append('<br/>');
-                    }
-                    if(value.MissionInfo.nightmare == true){
-                        var nightmare = $('<span class="Alertnightmare"/>').text('Cauchemar');
-                        td.append(nightmare);
-                        td.append('<br/>');
-                    }
-                    var credit = $('<span class="Alertcredit"/>').text(value.MissionInfo.missionReward.credits + ' crédits');
-                    td.append(credit);
-                    td.append('<br/>');
-                    $.each(value.MissionInfo.missionReward['items'], function (key, value){
-                        var reward = $('<span class="AlertNoCountedItem"/>').text(value);
-                        td.append(reward);
-                        td.append('<br/>');
-                    });
-                    $.each(value.MissionInfo.missionReward.countedItems, function (key, value){
-                        var reward = $('<span class="AlertCountedItem"/>').text(value.ItemCount + " " + value.ItemType);
-                        td.append(reward);
-                        td.append('<br/>');
-                    });
 
-                    if(value.Activation.sec <= datas.timenow){
-                        var timeExpiry = $('<span class="Alerttime"/>').attr('data-end', value.Expiry.usec);
-                        td.append(timeExpiry);
-                        td.append('<br/>');
+                        var ln = $('<div style="margin-bottom: 3px"/>');
+
+                        if (value.MissionInfo.archwingRequired == true) {
+                            var archwing = $('<span class="label label-primary alert-archwing"/>').text('Archwing');
+                            ln.append(archwing);
+                        }
+                        if (value.MissionInfo.nightmare == true) {
+                            var nightmare = $('<span class="label label-danger alert-cauchemar"/>').text('Cauchemar');
+                            ln.append(nightmare);
+                        }
+
+                        var nom = $('<strong/>').text(" " + value.MissionInfo.location);
+                        ln.append(nom);
+
+                        alertwar.append(ln);
+
+                        var type = $('<strong/>').text(value.MissionInfo.missionType);
+                        alertwar.append(type);
+
+                        if (value.MissionInfo.maxWaveNum) {
+                            var wave;
+                            if (value.MissionInfo.missionType == 'Espionage') {
+                                wave = $('<spa/>').text(" | Mini. " + value.MissionInfo.maxWaveNum + " données");
+                            }
+                            else if (value.MissionInfo.missionType == 'Survie') {
+                                wave = $('<span/>').text(" | " + value.MissionInfo.maxWaveNum + " minutes");
+                            }
+                            else {
+                                wave = $('<span/>').text(" | " + value.MissionInfo.maxWaveNum + " vagues");
+                            }
+                            alertwar.append(wave);
+                        }
+
+                        var faction = $('<span/>').text(" | " + value.MissionInfo.faction);
+                        alertwar.append(faction);
+
+                        var level = $('<span/>').text(" | " + value.MissionInfo.minEnemyLevel + " - " + value.MissionInfo.maxEnemyLevel);
+                        alertwar.append(level);
+
+                        var div = $('<div/>');
+
+                        var credit = $('<span/>').text(value.MissionInfo.missionReward.credits + ' crédits');
+                        div.append(credit);
+
+                        $.each(value.MissionInfo.missionReward['items'], function (key, value) {
+                            var reward = $('<span class="label label-default alert-reward"/>').text(value);
+                            div.append(reward);
+                        });
+                        $.each(value.MissionInfo.missionReward.countedItems, function (key, value) {
+                            var reward = $('<span class="label label-default alert-reward"/>').text(value.ItemCount + " " + value.ItemType);
+                            div.append(reward);
+                        });
+
+                        alertwar.append(div);
+                        alertwar.appendTo(".col-Alerts");
                     }
-                    else {
-                        var timeActivation = $('<span class="Alerttime"/>').attr('data-end', value.Activation.usec);
-                        td.append(timeActivation);
-                        td.append('<br/>');
-                    }
-                    td.appendTo(tr);
-                    tr.appendTo(".alerts tbody");
                 });
-                $(".Alerttime").each(function () {
+                $(".alert-timer").each(function () {
                     $(this).countdown($(this).attr('data-end'), function (event) {
                         $(this).html(
                             event.strftime([
@@ -479,11 +431,11 @@
                         );
                     });
                 });
-                setTimeout("warjson(time)",5000);
+                setTimeout("warjson(time)",10000);
             }, 'json');
         }
-
         warjson(time);
+
         /*
         $(".countdown").each(function () {
             $(this).countdown($(this).attr('data-end'), function (event) {

@@ -9,7 +9,7 @@
     "value" : "Oxium"
   },
   "/Lotus/Types/Items/MiscItems/Ferrite" : {
-    "value" : "Ferrites"
+    "value" : "Ferrite"
   },
   "/Lotus/Types/Items/MiscItems/Alertium" : {
     "value" : "Extrait de Nitain"
@@ -18,12 +18,21 @@
     "value" : "Gallium"
   },
   "/Lotus/Types/Items/MiscItems/Rubedo" : {
-    "value" : "Rubedos"
+    "value" : "Rubedo"
   },
   "/Lotus/Types/Items/MiscItems/Salvage" : {
-    "value" : "Récupérations"
+    "value" : "Récupération"
   },
   "/Lotus/Types/Items/MiscItems/AlloyPlate" : {
-    "value" : "Plaque d'Alliages"
+    "value" : "Plaque d'Alliage"
+  },
+  "/Lotus/Types/Items/MiscItems/Neurode" : {
+    "value" : "Neurode"
+  },
+  "/Lotus/Types/Items/MiscItems/OrokinCell" : {
+    "value" : "Cellule Orokin"
+  },
+  "/Lotus/Types/Items/MiscItems/Morphic" : {
+    "value" : "Morphic"
   }
 }
