@@ -39,7 +39,7 @@
     "value" : "Flamboiement"
   },
   "/Lotus/StoreItems/Types/Recipes/Weapons/HeatDaggerBlueprint": {
-    "value" : "Dague de Chaleur"
+    "value" : "Schéma Dague de Chaleur"
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/SandmanAltHelmetBlueprint": {
     "value" : "Schéma Casque Inaros Anubis"
@@ -67,5 +67,80 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Weapons/Skins/GrnAxeBlueprint": {
     "value" : "Shéma Aspect Hache Manticore"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/JawBlueprint" : {
+    "value" : "Schéma Épée Jaw"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/ValkyrAltBHelmetBlueprint" : {
+    "value" : "Schéma Casque Valkyr Kara"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2TrinityAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Trinity Meridian"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/NekrosShroudHelmetBlueprint" : {
+    "value" : "Schéma Casque Nekros Shroud"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/ShredMod" : {
+    "value" : "Charpie"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/OberonAltBHelmetBlueprint" : {
+    "value" : "Schéma Casque Oberon Markhor"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/RunSpeedArmorMod" : {
+    "value" : "Agilité Blindée"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Sentinel/SentinelLootRadarEnemyRadarMod" : {
+    "value" : "Instinct Animal"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/LokiEnigmaHelmetBlueprint" : {
+    "value" : "Schéma Casque Loki Enigma"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerHealthRegenAuraMod" : {
+    "value" : "Rajeunissement"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessMagAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Mag Coil"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/GrinderMod" : {
+    "value" : "Déluge Mortel"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/DarkDaggerBlueprint" : {
+    "value" : "Schéma Dague Sombre"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/VigorMod" : {
+    "value" : "Vigueur"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessSarynAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Saryn Hemlock"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/NezhaAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Nezha Circa"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/InfestationSpeedReductionAuraMod" : {
+    "value" : "Entrave Infestés"
+  },
+  "/Lotus/StoreItems/Types/Recipes/DarkSwordBlueprint" : {
+    "value" : "Schéma Épée Sombre"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/Skins/GrnHammerBlueprint" : {
+    "value" : "Schéma Aspect Marteau Brokk"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/RareLvl3FusionBundle" : {
+    "value" : "55 ENDO"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Components/OrokinReactorBlueprint" : {
+    "value" : "Réacteur Orokin"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/OberonAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Oberon Oryx"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/RareLvl2FusionBundle" : {
+    "value" : "40 ENDO"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2MagAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Mag Gauss"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/RareLvl4FusionBundle" : {
+    "value" : "65 ENDO"
   }
 }

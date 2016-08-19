@@ -33,6 +33,21 @@
     "value" : "Cellule Orokin"
   },
   "/Lotus/Types/Items/MiscItems/Morphic" : {
-    "value" : "Morphic"
+    "value" : "Morphics"
+  },
+  "/Lotus/Types/Items/MiscItems/NeuralSensor" : {
+    "value" : "Capteur Neuronaux"
+  },
+  "/Lotus/Types/Items/MiscItems/Nanospores" : {
+    "value" : "Nano Spores"
+  },
+  "/Lotus/Types/Items/MiscItems/Plastids" : {
+    "value" : "Plastides"
+  },
+  "/Lotus/Types/Items/MiscItems/PolymerBundle" : {
+    "value" : "Pack Polymère"
+  },
+  "/Lotus/Types/Items/MiscItems/Circuits" : {
+    "value" : "Circuits"
   }
 }
