@@ -142,5 +142,8 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/RareLvl4FusionBundle" : {
     "value" : "65 ENDO"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/RareLvl5FusionBundle" : {
+    "value" : "80 ENDO"
   }
 }
