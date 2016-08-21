@@ -18,7 +18,7 @@
     </div>
 
     <div class="col-md-6">
-        <h2>Alerts</h2>
+        <h2 style="text-align: center">Alerts</h2>
         <div class="col-Alerts"></div>
     </div>
 

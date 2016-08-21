@@ -1,6 +1,6 @@
 <!-- Banner -->
 <section class="youplay-banner big banner-top youplay-banner-parallax">
-    <div class="image" style="background-image: url('http://i.imgur.com/wQzVkEt.jpg')"></div>
+    <div class="image" style="background-image: url('https://i.imgur.com/wQzVkEt.jpg')"></div>
     <div class="info">
         <div>
             <div class="container text-center">

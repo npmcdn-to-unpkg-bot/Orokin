@@ -145,5 +145,20 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/RareLvl5FusionBundle" : {
     "value" : "80 ENDO"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/HammerShotMod" : {
+    "value" : "Marteau Pilon"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Melee/DualStat/FocusEnergyMod" : {
+    "value" : "Concentration d'Énergie"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessVoltAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Volt Storm"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/ZephyrCierzoHelmetBlueprint" : {
+    "value" : "Schéma Casque Zephyr Cierzo"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Melee/DualStat/RendingStrikeMod" : {
+    "value" : "Frappe Déchirante"
   }
 }

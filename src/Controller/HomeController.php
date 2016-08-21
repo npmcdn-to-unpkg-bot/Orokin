@@ -16,12 +16,8 @@ class HomeController extends AppController
 {
     public function index()
     {
-        $alljson = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
-        $this->set('datas', $alljson);
-    }
-
-    public function alerts()
-    {
-        
+        /*
+        $alljson = json_decode(file_get_contents('http://content.warframe.com/MobileExport/Manifest/ExportManifest.json'));
+        $this->set('datas', $alljson);*/
     }
 }
