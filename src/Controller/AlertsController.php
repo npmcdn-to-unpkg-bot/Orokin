@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Controller;
-//use Cake\Cache\Cache;
+use Cake\Cache\Cache;
 //use Cake\Event\Event;
 
 class AlertsController extends AppController
@@ -57,7 +57,7 @@ class AlertsController extends AppController
             }
 
             //Change le nom des rewards numérotés
-            if (isset($value->{'MissionInfo'}->{'missionReward'}->{'countedItems'})){
+            if (isset($value->{'MissionInfo'}->{'missionReward'}->{'countedItems'})) {
                 foreach ($value->{'MissionInfo'}->{'missionReward'}->{'countedItems'} as $value2) {
                     foreach ($countedItems as $key2 => $reward) {
                         if ($value2->{'ItemType'} == $key2) {
@@ -68,8 +68,8 @@ class AlertsController extends AppController
             }
 
             //Change le nom des rewards non numérotés
-            if (isset($value->{'MissionInfo'}->{'missionReward'}->{'items'})){
-                foreach ($value->{'MissionInfo'}->{'missionReward'}->{'items'} as $key4=>$value3) {
+            if (isset($value->{'MissionInfo'}->{'missionReward'}->{'items'})) {
+                foreach ($value->{'MissionInfo'}->{'missionReward'}->{'items'} as $key4 => $value3) {
                     foreach ($noCountedItem as $key3 => $reward2) {
                         if ($value->{'MissionInfo'}->{'missionReward'}->{'items'}[$key4] == $key3) {
                             $value->{'MissionInfo'}->{'missionReward'}->{'items'}[$key4] = $reward2->{'value'};
@@ -77,16 +77,15 @@ class AlertsController extends AppController
                     }
                 }
             }
-
         }
+
+        //Mise en cache des données
+        Cache::write('data', $alljson);
+
+        //Récupération des données en cache
+        $alljson = Cache::read('data');
 
         $this->set('datas', $alljson);
         $this->set('timenow', time() + $time);
-
-        //Mise en cache des données
-        //Cache::write('data', $json);
-
-        //Récupération des données en cache
-        //$data = Cache::read('data');
     }
 }

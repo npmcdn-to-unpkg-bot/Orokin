@@ -16,6 +16,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <!--
                 <li>
                     <a href="#">
                         News
@@ -28,9 +29,11 @@
                         <span class="label">Forums</span>
                     </a>
                 </li>
+                -->
                 <li>
                     <a href="<?= $this->Url->build(['controller' => 'Alerts', 'action' => 'index']); ?>">
                         Alerts
+                        <span class="badge bg-danger">!</span>
                         <span class="label">En Direct</span>
                     </a>
                 </li>
