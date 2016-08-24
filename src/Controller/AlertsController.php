@@ -31,6 +31,8 @@ class AlertsController extends AppController
                 $sortiesReward = json_decode(file_get_contents('./json/sortiesReward.json'));
                 $sortiesName = json_decode(file_get_contents('./json/sortiesName.json'));
                 $sortiesBoss = json_decode(file_get_contents('./json/sortiesBoss.json'));
+                $missionIndex = json_decode(file_get_contents('./json/missionIndex.json'));
+                $modifierIndex = json_decode(file_get_contents('./json/modifierIndex.json'));
 
                 //Alerts
                 foreach ($alljson->{'Alerts'} as $value) {
@@ -113,9 +115,8 @@ class AlertsController extends AppController
                         }
                     }
 
-
-
                     foreach ($value->{'Variants'} as $key => $variant) {
+
                         //Change le nom de la mission
                         foreach ($nodesjson as $key2 => $node) {
                             if ($variant->{'node'} == $key2) {
@@ -123,7 +124,19 @@ class AlertsController extends AppController
                             }
                         }
 
+                        //Change le type de la mission
+                        foreach ($missionIndex as $key2 => $type) {
+                            if ($variant->{'missionIndex'} == $key2) {
+                                $variant->{'missionIndex'} = $type->{'value'};
+                            }
+                        }
 
+                        //Change le modifier de la mission
+                        foreach ($modifierIndex as $key2 => $mod) {
+                            if ($variant->{'modifierIndex'} == $key2) {
+                                $variant->{'modifierIndex'} = $mod->{'value'};
+                            }
+                        }
                     }
                 }
                 //Mise en cache des données Alertes

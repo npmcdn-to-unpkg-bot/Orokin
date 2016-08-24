@@ -1,0 +1,17 @@
+{
+  "0" : {
+    "value" : "Extermination"
+  },
+  "3" : {
+    "value" : "Sabotage"
+  },
+  "4" : {
+    "value" : "Espionage"
+  },
+  "5" : {
+    "value" : "Défence"
+  },
+  "9" : {
+    "value" : "Assassinat"
+  }
+}

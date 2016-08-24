@@ -160,5 +160,8 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerRifleDamageAuraMod" : {
     "value" : "Aura Fusil Amplifié"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/RobotPoorAimAuraMod" : {
+    "value" : "Aura IEM"
   }
 }

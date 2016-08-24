@@ -112,9 +112,11 @@
 
             //Sorties
             if(datas.Sorties) {
-                $(".col-Sorties").html('');
+                $(".col-Sorties-Rewards").html('');
+                $(".col-Sorties-Missions").html('');
                 $.each(datas.Sorties, function (key, value) {
                     var sortiesInfo = $('<div class="alert"/>');
+                    var sortiesInfoEnnemi = $('<div class="alert"/>');
 
                     var sortiesSaison = $('<div/>').text(value.Reward).css({"text-align" : "center", "font-weight" : "bold", "font-size" : "18px"});
                     sortiesInfo.append(sortiesSaison);
@@ -124,26 +126,66 @@
                     });
                     sortiesInfo.append(sortiesTime);
 
-                    var div = $('<div/>').text('Ennemi : ').css({"text-align" : "center"});
+                    var div = $('<div style="font-size: 18px"/>').text('Ennemi : ').css({"text-align" : "center"});
                     var sortiesBoss = $('<strong/>').text(value.Boss);
                     div.append(sortiesBoss);
-                    div.appendTo(sortiesInfo);
+                    div.appendTo(sortiesInfoEnnemi);
+                    sortiesInfoEnnemi.appendTo(".col-Sorties-Missions");
 
-                    sortiesInfo.appendTo(".col-Sorties");
+                    sortiesInfo.appendTo(".col-Sorties-Rewards");
 
 
-                    var sortiesRewardTable = $('<table class="table table-bordered table-hover"/>');
+                    var sortiesRewardTable = $('<table class="table table-hover"/>');
                     var sortiesRewardTableBody = $('<tbody/>');
                     $.each(value.RewardList, function (key, reward) {
                         var sortiesRewardTableLigne = $('<tr/>');
-                        var sortiesRewardTableCell = $('<td style="padding: 0 10px"/>')
+                        var sortiesRewardTableCell = $('<td style="padding: 0 20px"/>')
                         sortiesRewardTableCell.text('- ' + reward);
                         sortiesRewardTableLigne.append(sortiesRewardTableCell);
                         sortiesRewardTableBody.append(sortiesRewardTableLigne);
                     });
                     sortiesRewardTable.append(sortiesRewardTableBody);
 
-                    sortiesRewardTable.appendTo(".col-Sorties");
+                    sortiesRewardTable.appendTo(".col-Sorties-Rewards");
+
+                    $.each(value.Variants, function (key, value) {
+                        var sortiesMission = $('<div class="alert"/>');
+                        var sortiesMissionLvl;
+                        switch(key) {
+                            case 0:
+                                sortiesMissionLvl = $('<span/>').text(' | 55 - 60');
+                                break;
+                            case 1:
+                                sortiesMissionLvl = $('<span/>').text(' | 65 - 80');
+                                break;
+                            case 2:
+                                sortiesMissionLvl = $('<span/>').text(' | 80 - 100');
+                        }
+
+                        var sortiesMissionLocation = $('<strong/>').text(value.node);
+
+                        sortiesMission.append(sortiesMissionLocation);
+                        sortiesMission.append(sortiesMissionLvl);
+
+                        sortiesMission.append('<br/>');
+
+                        var sortiesMissionTitle = $('<span/>').text('Mission : ');
+                        var sortiesMissionType = $('<strong/>').text(value.missionIndex);
+
+                        sortiesMission.append(sortiesMissionTitle);
+                        sortiesMission.append(sortiesMissionType);
+
+                        sortiesMission.append('<br/>');
+
+                        var sortiesModifierTitle = $('<span/>').text('Condition : ');
+                        var sortiesModifierType = $('<strong/>').text(value.modifierIndex);
+
+                        sortiesMission.append(sortiesModifierTitle);
+                        sortiesMission.append(sortiesModifierType);
+
+                        sortiesMission.appendTo(".col-Sorties-Missions");
+
+                    });
                 });
                 $(".sortiesCountdown").each(function () {
                     $(this).countdown($(this).attr('data-end'), function (event) {
@@ -166,7 +208,8 @@
                 var sortieswar = $('<div class="alert"/>');
                 var noSorties = $('<h3 style="text-align: center;margin-top: 10px;"/>').text('Aucune');
                 sortieswar.append(noSorties);
-                sortieswar.appendTo(".col-Sorties");
+                sortieswar.appendTo(".col-Sorties-Rewards");
+                sortieswar.appendTo(".col-Sorties-Missions");
             }
 
             

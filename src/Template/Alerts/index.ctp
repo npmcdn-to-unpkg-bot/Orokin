@@ -31,12 +31,13 @@
     <h2 style="text-align: center">Sorties</h2>
 
     <div class="col-md-6">
-        <div class="col-Sorties">
+        <div class="col-Sorties-Rewards">
         </div>
     </div>
 
     <div class="col-md-6">
-
+        <div class="col-Sorties-Missions">
+        </div>
     </div>
 
 </div>
