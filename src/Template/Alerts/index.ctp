@@ -17,14 +17,28 @@
         <strong>Développement en cours!</strong>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <h2 style="text-align: center">Alerts</h2>
+            <div class="col-Alerts"></div>
+        </div>
+
+        <div class="col-md-6">
+            <h2 style="text-align: center">Invasions</h2>
+        </div>
+    </div>
+
+    <h2 style="text-align: center">Sorties</h2>
+
     <div class="col-md-6">
-        <h2 style="text-align: center">Alerts</h2>
-        <div class="col-Alerts"></div>
+        <div class="col-Sorties">
+        </div>
     </div>
 
     <div class="col-md-6">
 
     </div>
+
 </div>
 
 
@@ -46,6 +60,6 @@
 
 <?php $this->start('script'); ?>
 
-    <?= $this->element('scriptsAlerts') ?>
+    <?= $this->element('scriptWarjson') ?>
 
 <?php $this->end(); ?>

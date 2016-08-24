@@ -50,3 +50,20 @@
     font-weight: bold;
     font-size: 11px;
 }
+
+.panel-group .panel-default > .panel-heading::after{
+    position: absolute;
+    left: 0;
+    background: rgba(255,255,255,.1);
+    -webkit-transform: skew(-7deg);
+    -ms-transform: skew(-7deg);
+    -o-transform: skew(-7deg);
+    transform: skew(-7deg);
+    z-index: 1;
+}
+
+.sortiesCountdown {
+    font-size: 16px;
+    text-align: center
+}
+

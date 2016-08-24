@@ -46,5 +46,8 @@
   },
   "MT_RETRIEVAL" : {
     "value" : "Détournement"
+  },
+  "MT_COUNTER_INTEL" : {
+    "value" : "Imposture"
   }
 }

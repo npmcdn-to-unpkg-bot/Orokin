@@ -9,14 +9,21 @@
 namespace App\Controller;
 
 use App\Controller;
-//use Cake\Cache\Cache;
-//use Cake\Event\Event;
+use Cake\Cache\Cache;
 
 class HomeController extends AppController
 {
     public function index()
     {
         $alljson = json_decode(file_get_contents('http://content.warframe.com/dynamic/worldState.php'));
-        $this->set('datas', $alljson);
+        //$alljson = json_decode(file_get_contents('./json/sortiesReward.json'));
+
+        //Mise en cache des données
+        //Cache::write('Alerts', $alljson->{'Alerts'});
+
+        //Récupération des données en cache
+        //$alljson = Cache::read('Alerts');
+
+        $this->set('Alerts', $alljson);
     }
 }

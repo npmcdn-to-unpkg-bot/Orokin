@@ -2,21 +2,6 @@
   "/Lotus/StoreItems/Types/Recipes/WarframeRecipes/TrapperChassisBlueprint": {
     "value" : "Schéma Chassis Vauban"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl1ModFuser": {
-    "value" : "Coeur de fusion R1"
-  },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl2ModFuser": {
-    "value" : "Coeur de fusion R2"
-  },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl3ModFuser": {
-    "value" : "Coeur de fusion R3"
-  },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl4ModFuser": {
-    "value" : "Coeur de fusion R4"
-  },
-  "/Lotus/StoreItems/Upgrades/Mods/Fusers/RareLvl5ModFuser": {
-    "value" : "Coeur de fusion R5"
-  },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessVaubanAltHelmetBlueprint": {
     "value" : "Schéma Casque Vauban Esprit"
   },
@@ -33,7 +18,7 @@
     "value" : "Schéma Casque Ash Locust"
   },
   "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerEnemyRadarAuraMod": {
-    "value" : "Radar Ennemi"
+    "value" : "Aura Radar Ennemi"
   },
   "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/BlazeMod": {
     "value" : "Flamboiement"
@@ -54,7 +39,7 @@
     "value" : "Schéma Aspect Scindo Hache-Dague"
   },
   "/Lotus/StoreItems/Upgrades/Mods/Aura/EnemyArmorReductionAuraMod": {
-    "value" : "Projection Corrosive"
+    "value" : "Aura Projection Corrosive"
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessNyxAltHelmetBlueprint": {
     "value" : "Schéma Casque Nyx Menticide"
@@ -96,7 +81,7 @@
     "value" : "Schéma Casque Loki Enigma"
   },
   "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerHealthRegenAuraMod" : {
-    "value" : "Rajeunissement"
+    "value" : "Aura Rajeunissement"
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessMagAltHelmetBlueprint" : {
     "value" : "Schéma Casque Mag Coil"
@@ -117,7 +102,7 @@
     "value" : "Schéma Casque Nezha Circa"
   },
   "/Lotus/StoreItems/Upgrades/Mods/Aura/InfestationSpeedReductionAuraMod" : {
-    "value" : "Entrave Infestés"
+    "value" : "Aura Entrave Infestés"
   },
   "/Lotus/StoreItems/Types/Recipes/DarkSwordBlueprint" : {
     "value" : "Schéma Épée Sombre"
@@ -160,5 +145,20 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/Melee/DualStat/RendingStrikeMod" : {
     "value" : "Frappe Déchirante"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/MirageAltBHelmetBlueprint" : {
+    "value" : "Schéma Casque Mirage Trivelin"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/RareFusionBundle" : {
+    "value" : "80 ENDO"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/LimboAristeasHelmetBlueprint" : {
+    "value" : "Schéma Casque Limbo Aristeas"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2FrostAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Frost Squall"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerRifleDamageAuraMod" : {
+    "value" : "Aura Fusil Amplifié"
   }
 }
