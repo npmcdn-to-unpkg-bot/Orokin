@@ -129,17 +129,20 @@
                     var div = $('<div style="font-size: 18px"/>').text('Ennemi : ').css({"text-align" : "center"});
                     var sortiesBoss = $('<strong/>').text(value.Boss);
                     div.append(sortiesBoss);
-                    div.appendTo(sortiesInfoEnnemi);
-                    sortiesInfoEnnemi.appendTo(".col-Sorties-Missions");
+                    sortiesInfo.append(div);
 
-                    sortiesInfo.appendTo(".col-Sorties-Rewards");
+                    sortiesInfo.appendTo(".col-Sorties-Missions");
+
+                    //sortiesInfo.appendTo(".col-Sorties-Rewards");
 
 
-                    var sortiesRewardTable = $('<table class="table table-hover"/>');
+                    var sortiesRewardTable = $('<table class="table table-bordered table-hover"/>');
+                    var sortiesRewardTableHead = $('<thead><tr style="background-color: rgba(255,255,255,.1);"><th style="text-align: center; font-size: 16px">Récompenses</th></tr></thead>');
+                    sortiesRewardTable.append(sortiesRewardTableHead);
                     var sortiesRewardTableBody = $('<tbody/>');
                     $.each(value.RewardList, function (key, reward) {
                         var sortiesRewardTableLigne = $('<tr/>');
-                        var sortiesRewardTableCell = $('<td style="padding: 0 20px"/>')
+                        var sortiesRewardTableCell = $('<td style="padding: 1px 20px"/>');
                         sortiesRewardTableCell.text('- ' + reward);
                         sortiesRewardTableLigne.append(sortiesRewardTableCell);
                         sortiesRewardTableBody.append(sortiesRewardTableLigne);
