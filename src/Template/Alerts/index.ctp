@@ -24,19 +24,26 @@
         </div>
 
         <div class="col-md-6">
-            <h2 style="text-align: center">Invasions</h2>
-        </div>
-    </div>
-
-    <h2 style="text-align: center">Sorties</h2>
-
-    <div class="col-md-6">
-        <div class="col-Sorties-Missions">
-        </div>
-    </div>
-
-    <div class="col-md-6">
-        <div class="col-Sorties-Rewards">
+            <h2 style="text-align: center">Sorties</h2>
+            <div style="text-align: center; font-size: 18px;" class="alert sortiesInfo"></div>
+            <div class="col-Sorties-Rewards">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a style="font-weight: bold" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Récompenses <span class="icon-plus"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body rewardlist">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-Sorties-Missions"></div>
         </div>
     </div>
 </div>
