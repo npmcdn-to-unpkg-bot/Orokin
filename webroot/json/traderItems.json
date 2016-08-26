@@ -1,0 +1,17 @@
+{
+  "/Lotus/StoreItems/Types/Keys/MummyQuestKeyBlueprint" : {
+    "value" : "Les sables d'Inaros (Quête)"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/ElectEventPistolMod" : {
+    "value" : "Secousse"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/ElectEventShotgunMod" : {
+    "value" : "Commotion"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Melee/DualStat/ElectEventMeleeMod" : {
+    "value": "Coup Voltaïque"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/ElectEventRifleMod" : {
+    "value" : "Haute Tension"
+  }
+}

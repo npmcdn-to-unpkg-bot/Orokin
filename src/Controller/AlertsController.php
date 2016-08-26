@@ -139,16 +139,48 @@ class AlertsController extends AppController
                         }
                     }
                 }
-                //Mise en cache des données Alertes
+                //Mise en cache des données Sorties
                 Cache::write('Sorties', $alljson->{'Sorties'}, 'warjson');
+
+                //VoidTraders
+
+                foreach ($alljson->{'VoidTraders'} as $value) {
+                    $value->{'Activation'}->{'sec'} = $value->{'Activation'}->{'sec'} + $time;
+                    $value->{'Activation'}->{'usec'} = date("Y-m-d H:i:s", $value->{'Activation'}->{'sec'});
+                    $value->{'Expiry'}->{'sec'} = $value->{'Expiry'}->{'sec'} + $time;
+                    $value->{'Expiry'}->{'usec'} = date("Y-m-d H:i:s", $value->{'Expiry'}->{'sec'});
+
+                    //Change le nom de la mission
+                    foreach ($nodesjson as $key => $node) {
+                        if ($value->{'Node'} == $key) {
+                            $value->{'Node'} = $node->{'value'};
+                        }
+                    }
+
+                    //Change le nom des rewards non numérotés
+                    if (isset($value->{'Manifest'})) {
+                        $traderItems = json_decode(file_get_contents('./json/traderItems.json'));
+                        foreach ($value->{'Manifest'} as $item) {
+                            foreach ($traderItems as $key2 => $item2) {
+                                if ($item->{'ItemType'} == $key2) {
+                                    $item->{'ItemType'} = $item2->{'value'};
+                                }
+                            }
+                        }
+                    }
+                }
+                //Mise en cache des données Marchand
+                Cache::write('VoidTraders', $alljson->{'VoidTraders'}, 'warjson');
             }
 
         //Récupération des données en cache
         $alerts = Cache::read('Alerts', 'warjson');
         $sorties = Cache::read('Sorties', 'warjson');
+        $traders = Cache::read('VoidTraders', 'warjson');
 
         $this->set('Alerts', $alerts);
         $this->set('Sorties', $sorties);
+        $this->set('VoidTraders', $traders);
         $this->set('timenow', time() + $time);
     }
 }

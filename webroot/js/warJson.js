@@ -9,12 +9,10 @@ function warjson(time) {
                 if (datas.timenow <= value.Expiry.sec) {
                     var alertwar = $('<div class="alert"/>');
 
-                    if (value.Activation.sec <= datas.timenow) {
+                    if (value.Activation.sec <= datas.timenow)
                         alertwar.append($('<span class="label label-success alert-timer expiry"/>').attr({'data-end': value.Expiry.usec,'data': value.Expiry.sec}));
-                    }
-                    else {
+                    else
                         alertwar.append($('<span class="label label-default alert-timer activation">').attr({'data-end': value.Activation.usec, 'data': value.Activation.sec}));
-                    }
 
                     var ligne = $('<div/>').css({"margin-bottom" : "3px"});
                     ligne.append($('<strong/>').text(value.MissionInfo.location + " "));
@@ -28,15 +26,12 @@ function warjson(time) {
                     alertwar.append($('<strong/>').text(value.MissionInfo.missionType));
 
                     if (value.MissionInfo.maxWaveNum) {
-                        if (value.MissionInfo.missionType == 'Espionage') {
+                        if (value.MissionInfo.missionType == 'Espionage')
                             alertwar.append($('<spa/>').text(" | Mini. " + value.MissionInfo.maxWaveNum + " données"));
-                        }
-                        else if (value.MissionInfo.missionType == 'Survie') {
+                        else if (value.MissionInfo.missionType == 'Survie')
                             alertwar.append($('<span/>').text(" | " + value.MissionInfo.maxWaveNum + " minutes"));
-                        }
-                        else {
+                        else
                             alertwar.append($('<span/>').text(" | " + value.MissionInfo.maxWaveNum + " vagues"));
-                        }
                     }
 
                     alertwar.append($('<span/>').text(" | " + value.MissionInfo.faction));
@@ -135,9 +130,60 @@ function warjson(time) {
         else {
             sortiesInfo.append($('<h3/>').text('Aucune').css({"text-align" : "center", "margin-top" : "10px"}));
         }
+
+
+        //VoidTraders
+        var traderName = $('.traderName');
+        var voidTraderList = $('.voidTrader');
+        traderName.html('');
+        voidTraderList.html('');
+        $.each(datas.VoidTraders, function (key, value) {
+
+            traderName.text(value.Character);
+
+            var itemsTable = $('<table class="table table-bordered table-hover table-striped ItemsTrader"/>');
+            var itemsTableHead = $('<thead><tr><th>Objets</th><th>Ducats</th><th>Crédits</th></tr></thead>');
+            var itemsTableBody = $('<tbody/>');
+            $.each(value.Manifest, function (key, value) {
+                itemsTableBody.append($('<tr/>').append($('<td/>').text(value.ItemType)).append($('<td/>').text(value.PrimePrice)).append($('<td/>').text(value.RegularPrice)));
+            });
+            voidTraderList.append(itemsTable.append(itemsTableHead).append(itemsTableBody));
+
+            if (value.Activation.sec <= datas.timenow)
+                $('.tradercountdown').attr({'data-end': value.Expiry.usec,'data': value.Expiry.sec});
+            else
+                $('.tradercountdown').attr({'data-end': value.Activation.usec, 'data': value.Activation.sec});
+
+        });
+        $(".tradercountdown").each(function() {
+            $(this).countdown($(this).attr('data-end'), function(event) {
+                $(this).html(
+                    event.strftime([
+                        '<div class="countdown-item">',
+                        '<span>Days</span>',
+                        '<span><span>%D</span></span>',
+                        '</div>',
+                        '<div class="countdown-item">',
+                        '<span>Hours</span>',
+                        '<span><span>%H</span></span>',
+                        '</div>',
+                        '<div class="countdown-item">',
+                        '<span>Minutes</span>',
+                        '<span><span>%M</span></span>',
+                        '</div>',
+                        '<div class="countdown-item">',
+                        '<span>Seconds</span>',
+                        '<span><span>%S</span></span>',
+                        '</div>'
+                    ].join(''))
+                );
+            });
+        });
+
         //Reset
-        setTimeout("warjson(time)",10000);
+        setTimeout("warjson(((new Date()).getTimezoneOffset())*-60)",10000);
     }, 'json');
 }
 
 warjson(((new Date()).getTimezoneOffset())*-60);
+

@@ -9,13 +9,11 @@
         <?= $this->element('header') ?>
 
         <!-- Main Content -->
-        <section class="content-wrap">
 
-            <?= $this->fetch('content') ?>
+        <?= $this->fetch('content') ?>
             
-            <?= $this->element('footer') ?>
-            
-        </section>
+        <?= $this->element('footer') ?>
+        
         <!-- /Main Content -->
 
         <?= $this->element('search') ?>
