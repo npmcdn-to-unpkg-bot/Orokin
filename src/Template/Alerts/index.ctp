@@ -63,6 +63,6 @@
 
 <?php $this->start('script'); ?>
 
-    <?= $this->element('scriptWarjson') ?>
+    <?= $this->Html->script('/js/warJson.js'); ?>
 
 <?php $this->end(); ?>

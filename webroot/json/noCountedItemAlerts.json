@@ -2,6 +2,9 @@
   "/Lotus/StoreItems/Types/Recipes/WarframeRecipes/TrapperChassisBlueprint": {
     "value" : "Schéma Chassis Vauban"
   },
+  "/Lotus/StoreItems/Types/Recipes/WarframeRecipes/TrapperSystemsBlueprint" : {
+    "value" : "Schéma Système Vauban"
+  },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessVaubanAltHelmetBlueprint": {
     "value" : "Schéma Casque Vauban Esprit"
   },
