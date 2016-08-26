@@ -163,17 +163,5 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/Aura/RobotPoorAimAuraMod" : {
     "value" : "Aura IEM"
-  },
-  "/Lotus/StoreItems/Upgrades/Mods/Aura/EnemyShieldReductionAuraMod" : {
-    "value" : "Aura Perturbation de Bouclier"
-  },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/NovaSlipstreamHelmetBlueprint" : {
-    "value" : "Schéma Casque Nova Slipstream"
-  },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessRhinoAltHelmetBlueprint" : {
-    "value" : "Schéma Casque Rhino Thrak"
-  },
-  "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/IceStormMod" : {
-    "value" : "Tempête de Glace"
   }
 }
