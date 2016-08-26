@@ -49,8 +49,5 @@
   },
   "/Lotus/Types/Items/MiscItems/Circuits" : {
     "value" : "Circuits"
-  },
-  "/Lotus/Types/Items/MiscItems/Tellurium" : {
-    "value" : "Tellure"
   }
 }
