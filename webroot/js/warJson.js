@@ -135,24 +135,33 @@ function warjson(time) {
         //VoidTraders
         var traderName = $('.traderName');
         var voidTraderList = $('.voidTrader');
+        var traderLocation = $('.traderLocation');
         traderName.html('');
         voidTraderList.html('');
+        traderLocation.html('');
         $.each(datas.VoidTraders, function (key, value) {
 
             traderName.text(value.Character);
 
-            var itemsTable = $('<table class="table table-bordered table-hover table-striped ItemsTrader"/>');
-            var itemsTableHead = $('<thead><tr><th>Objets</th><th>Ducats</th><th>Crédits</th></tr></thead>');
-            var itemsTableBody = $('<tbody/>');
-            $.each(value.Manifest, function (key, value) {
-                itemsTableBody.append($('<tr/>').append($('<td/>').text(value.ItemType)).append($('<td/>').text(value.PrimePrice)).append($('<td/>').text(value.RegularPrice)));
-            });
-            voidTraderList.append(itemsTable.append(itemsTableHead).append(itemsTableBody));
+            if(value.Manifest){
+                var itemsTable = $('<table class="table table-bordered table-hover table-striped ItemsTrader"/>');
+                var itemsTableHead = $('<thead><tr><th>Objets</th><th>Ducats</th><th>Crédits</th></tr></thead>');
+                var itemsTableBody = $('<tbody/>');
+                $.each(value.Manifest, function (key, value) {
+                    itemsTableBody.append($('<tr/>').append($('<td/>').text(value.ItemType).css({"text-align" : "center"})).append($('<td/>').text(value.PrimePrice).css({"text-align" : "center"})).append($('<td/>').text(value.RegularPrice).css({"text-align" : "center"})));
+                });
+                voidTraderList.append(itemsTable.append(itemsTableHead).append(itemsTableBody));
+            }
+            else {
+                voidTraderList.append($('<div class="alert"/>').append($('<h3/>').text('Aucune').css({"text-align" : "center", "margin-top" : "10px"})));
+            }
 
             if (value.Activation.sec <= datas.timenow)
                 $('.tradercountdown').attr({'data-end': value.Expiry.usec,'data': value.Expiry.sec});
             else
                 $('.tradercountdown').attr({'data-end': value.Activation.usec, 'data': value.Activation.sec});
+
+            traderLocation.text(value.Node).css({"text-align" : "center", "margin-top" : "10px"});
 
         });
         $(".tradercountdown").each(function() {

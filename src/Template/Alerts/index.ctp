@@ -52,17 +52,22 @@
             <div>
                 <h2 class="traderName"></h2>
                 <div class="countdown tradercountdown h2 style-1" data-end="2017-01-21 12:00" data-timezone="EST"></div>
+                <br/>
+                <h3 class="traderLocation"></h3>
             </div>
         </div>
     </section>
     <!-- /Realistic Battles -->
 
-    <div class="container mt-40">
+    <div class="container mt-20">
         <h2 style="text-align: center">Offres</h2>
-        <div class="col-md-10 col-md-offset-1 voidTrader">
-
-        </div>
+        <div class="col-md-10 col-md-offset-1 voidTrader"></div>
     </div>
+
+    <div class="h2"></div>
+    <section class="youplay-banner youplay-banner-parallax small" id="exclusive">
+        <div class="image" style="background-image: url('http://i.imgur.com/lPpEwSu.png');" data-speed="-0.5"></div>
+    </section>
 </section>
 
 <?php $this->start('script'); ?>

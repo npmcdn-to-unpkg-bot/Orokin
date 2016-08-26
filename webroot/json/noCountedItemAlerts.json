@@ -166,5 +166,8 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/Aura/RobotPoorAimAuraMod" : {
     "value" : "Aura IEM"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/ExcaliburMordredHelmetBlueprint" : {
+    "value" : "Schéma Casque Excalibur Mordred"
   }
 }
