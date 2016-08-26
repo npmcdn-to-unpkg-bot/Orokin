@@ -11,6 +11,9 @@
   "5" : {
     "value" : "Défence"
   },
+  "7" : {
+    "value" : "Interception"
+  },
   "9" : {
     "value" : "Assassinat"
   }
