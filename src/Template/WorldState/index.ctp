@@ -1,7 +1,7 @@
 <section class="content-wrap">
     <!-- Banner -->
     <section class="youplay-banner small banner-top youplay-banner-parallax">
-        <div class="image" style="background-image: url('http://i.imgur.com/AuXQrO0.jpg')"></div>
+        <div class="image" style="background-image: url('http://i.imgur.com/efSP4c0.jpg')"></div>
         <div class="info">
             <div>
                 <div class="container text-center">

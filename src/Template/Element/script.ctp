@@ -7,7 +7,7 @@
 <!-- Jarallax -->
 <?= $this->Html->script('/assets/bower_components/jarallax/dist/jarallax.min.js'); ?>
 <!-- Smooth Scroll -->
-<?= $this->Html->script('/assets/bower_components/smoothscroll-for-websites/SmoothScroll.js'); ?>
+<?= $this->Html->script('/assets/bower_components/smoothscroll-for-websites/SmoothScroll.min.js'); ?>
 <!-- Owl Carousel -->
 <?= $this->Html->script('/assets/bower_components/owl.carousel/dist/owl.carousel.min.js'); ?>
 <!-- Countdown -->
