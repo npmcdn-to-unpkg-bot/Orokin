@@ -1,5 +1,5 @@
 function warjson(time) {
-    $.post('Alerts/alerts', { time: time },function (datas) {
+    $.post('Alerts/index', { time: time },function (datas) {
 
         //Alerts
         var colAlerts = $(".col-Alerts");
