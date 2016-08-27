@@ -1,6 +1,6 @@
 <?= $this->Html->charset();?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>youplay</title>
+<title><?= $this->fetch('title'); ?></title>
 
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
