@@ -169,5 +169,11 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/ExcaliburMordredHelmetBlueprint" : {
     "value" : "Schéma Casque Excalibur Mordred"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2VoltAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Volt Pulse"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/PangolinSwordBlueprint" : {
+    "value" : "Schéma Épée Pangolin"
   }
 }
