@@ -4,7 +4,7 @@
         <!-- Copyright -->
         <div class="copyright">
             <div class="container">
-                <strong>nK</strong> &copy; 2016. All rights reserved
+                <strong>VoidWarriors</strong> &copy; 2016. Tous droits réservés
             </div>
         </div>
         <!-- /Copyright -->
