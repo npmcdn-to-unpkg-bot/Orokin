@@ -1375,37 +1375,37 @@
     "type" : "Assassination"
   }
   , "MercuryHUB": {
-    "value": "Larunda Relay (Mercure)",
+    "value": "Relais Larunda (Mercure)",
     "enemy": "Grineer",
     "type" : "Relay"
   }
   , "VenusHUB": {
-    "value": "Vesper Relay (Vénus)",
+    "value": "Relais Vesper (Vénus)",
     "enemy": "Corpus",
     "type" : "Relay"
   }
   , "EarthHUB": {
-    "value": "Strata Relay (Terre)",
+    "value": "Relais Strata (Terre)",
     "enemy": "Grineer",
     "type" : "Relay"
   }
   , "SaturnHUB": {
-    "value": "Kronia Relay (Saturne)",
+    "value": "Relais Kronia (Saturne)",
     "enemy": "Grineer",
     "type" : "Relay"
   }
   , "ErisHUB": {
-    "value": "Kuiper Relay (Éris)",
+    "value": "Relais Kuiper (Éris)",
     "enemy": "Infested",
     "type" : "Relay"
   }
   , "EuropaHUB": {
-    "value": "Leonov Relay (Europe)",
+    "value": "Relais Leonov (Europe)",
     "enemy": "Corpus",
     "type" : "Relay"
   }
   , "PlutoHUB": {
-    "value": "Orcus Relay (Pluton)",
+    "value": "Relais Orcus (Pluton)",
     "enemy": "Corpus",
     "type" : "Relay"
   }

@@ -13,5 +13,29 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/ElectEventRifleMod" : {
     "value" : "Haute Tension"
+  },
+  "/Lotus/StoreItems/Weapons/Tenno/Archwing/Melee/VoidTraderArchsword/VTArchSwordWeapon" : {
+    "value" : "Veritux Prisma"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Armor/SetThreeWinged/VTSetThreeLegLeftArmor" : {
+    "value" : "Grève Daedalus Prisma Gauche"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Armor/SetThreeWinged/VTSetThreeArmLeftArmor" : {
+    "value" : "Épaulière Daedalus Prisma Gauche"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Armor/SetThreeWinged/VTSetThreeChestArmor" : {
+    "value" : "Plastron Daedalus Prisma"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Armor/SetThreeWinged/VTSetThreeLegRightArmor" : {
+    "value" : "Grève Daedalus Prisma Droite"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Armor/SetThreeWinged/VTSetThreeArmRightArmor" : {
+    "value" : "Épaulière Daedalus Prisma Droite"
+  },
+  "/Lotus/StoreItems/Weapons/VoidTrader/PrismaSkana" : {
+    "value" : "Skana Prisma"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Liset/Gyroscope/LisetGyroscopeSkinPrimeTrader" : {
+    "value" : "Aspect Xiphos Prisma"
   }
 }

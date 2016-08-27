@@ -2,6 +2,9 @@
   "0" : {
     "value" : "Extermination"
   },
+  "2" : {
+    "value" : "Sauvetage"
+  },
   "3" : {
     "value" : "Sabotage"
   },

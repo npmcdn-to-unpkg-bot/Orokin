@@ -6,7 +6,7 @@ use App\Controller;
 use Cake\Cache\Cache;
 //use Cake\Event\Event;
 
-class AlertsController extends AppController
+class WorldStateController extends AppController
 {
     public function index() {
         if ($this->request->is('ajax')) {
@@ -31,6 +31,10 @@ class AlertsController extends AppController
                 $sortiesBoss = json_decode(file_get_contents('./json/sortiesBoss.json'));
                 $missionIndex = json_decode(file_get_contents('./json/missionIndex.json'));
                 $modifierIndex = json_decode(file_get_contents('./json/modifierIndex.json'));
+                $traders = json_decode(file_get_contents('./json/traders.json'));
+
+                //Récupère la version du worldState
+                Cache::write('Version', $alljson->{'Version'}, 'warjson');
 
                 //Alerts
                 foreach ($alljson->{'Alerts'} as $value) {
@@ -154,8 +158,15 @@ class AlertsController extends AppController
                             $value->{'Node'} = $node->{'value'};
                         }
                     }
+                    
+                    //Change le nom du Trader
+                    foreach ($traders as $key => $trader) {
+                        if ($value->{'Character'} == $key) {
+                            $value->{'Character'} = $trader->{'value'};
+                        }
+                    }
 
-                    //Change le nom des rewards non numérotés
+                    //Change le nom des rewards
                     if (isset($value->{'Manifest'})) {
                         $traderItems = json_decode(file_get_contents('./json/traderItems.json'));
                         foreach ($value->{'Manifest'} as $item) {
@@ -172,10 +183,12 @@ class AlertsController extends AppController
             }
 
             //Récupération des données en cache
+            $version = Cache::read('Version', 'warjson');
             $alerts = Cache::read('Alerts', 'warjson');
             $sorties = Cache::read('Sorties', 'warjson');
             $traders = Cache::read('VoidTraders', 'warjson');
 
+            $this->set('Version', $version);
             $this->set('Alerts', $alerts);
             $this->set('Sorties', $sorties);
             $this->set('VoidTraders', $traders);

@@ -32,3 +32,5 @@
 
 <!-- RTL (uncomment this to enable RTL support) -->
 <!-- <link rel="stylesheet" type="text/css" href="../assets/youplay/css/youplay-rtl.css" /> -->
+
+<?= $this->fetch('scriptTop'); ?>

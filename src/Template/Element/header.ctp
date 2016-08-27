@@ -31,8 +31,8 @@
                 </li>
                 -->
                 <li>
-                    <a href="<?= $this->Url->build(['controller' => 'Alerts', 'action' => 'index']); ?>">
-                        Alerts
+                    <a href="<?= $this->Url->build(['controller' => 'WorldState', 'action' => 'index']); ?>">
+                        WorldState
                         <span class="badge bg-danger">!</span>
                         <span class="label">En Direct</span>
                     </a>

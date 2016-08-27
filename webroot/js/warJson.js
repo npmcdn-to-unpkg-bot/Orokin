@@ -1,5 +1,11 @@
 function warjson(time) {
-    $.post('Alerts/index', { time: time },function (datas) {
+    $.post('WorldState/index', { time: time },function (datas) {
+
+        //Version
+        $('.numVersion').remove();
+        if(datas.Version) {
+            $('.worldState').append($('<span class="label label-default numVersion"/>').text('V' + datas.Version).css({"bottom" : "5px"}));
+        }
 
         //Alerts
         var colAlerts = $(".col-Alerts");
@@ -94,8 +100,12 @@ function warjson(time) {
 
                 sortiesInfo.append($('<span/>').text(value.Reward).css({"font-weight" : "bold"}));
                 sortiesInfo.append($('<div class="sortiesCountdown"/>').attr({'data-end': value.Expiry.usec}));
-                sortiesInfo.append($('<span/>').text('Ennemi : ').append($('<span/>').text(value.Boss).css({"font-weight" : "bold"})));
-
+                if(value.Boss) {
+                    sortiesInfo.append($('<span/>').text('Ennemi : ').append($('<span/>').text(value.Boss).css({"font-weight": "bold"})));
+                }
+                else {
+                    sortiesInfo.append($('<span/>').text('Ennemi : ').append($('<span/>').text('Non disponible').css({"font-weight": "bold"})));
+                }
                 $.each(value.RewardList, function (key, reward) {
                     sortiesReward.append($('<span/>').text('- ' + reward)).append('<br/>');
                 });
@@ -148,6 +158,7 @@ function warjson(time) {
         var traderName = $('.traderName');
         var voidTraderList = $('.voidTrader');
         var traderLocation = $('.traderLocation');
+        var typeTraderLocation = $('.typeTraderLocation');
         traderName.html('');
         voidTraderList.html('');
         traderLocation.html('');
@@ -170,9 +181,12 @@ function warjson(time) {
 
             if (value.Activation.sec <= datas.timenow) {
                 $('.tradercountdown').attr({'data-end': value.Expiry.usec, 'data': value.Expiry.sec});
+                typeTraderLocation.text('Actuellement sur :')
+                
             }
             else {
                 $('.tradercountdown').attr({'data-end': value.Activation.usec, 'data': value.Activation.sec});
+                typeTraderLocation.text('Arrivera sur :')
             }
 
             traderLocation.text(value.Node).css({"text-align" : "center", "margin-top" : "10px"});
