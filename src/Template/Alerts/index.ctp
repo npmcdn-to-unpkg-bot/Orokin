@@ -72,6 +72,6 @@
 
 <?php $this->start('script'); ?>
 
-    <?= $this->Html->script('/js/warJson.js'); ?>
+    <?= $this->Html->script('/js/warJson-min.js'); ?>
 
 <?php $this->end(); ?>
