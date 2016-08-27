@@ -9,12 +9,10 @@ use Cake\Cache\Cache;
 class AlertsController extends AppController
 {
     public function index() {
+        if ($this->request->is('ajax')) {
+            $time = $this->request->data['time'];
 
-    }
-
-    public function alerts() {
-        $time = $this->request->data['time'];
-        $time = intval($time);
+            $time = intval($time);
 
             if (Cache::read('Alerts', 'warjson') === false) {
 
@@ -96,21 +94,21 @@ class AlertsController extends AppController
 
                     //Récupération du boss
                     foreach ($sortiesBoss as $key => $name) {
-                        if($value->{'Variants'}['0']->{'bossIndex'} == $key){
+                        if ($value->{'Variants'}['0']->{'bossIndex'} == $key) {
                             $value->{'Boss'} = $name->{'value'};
                         }
                     }
 
                     //Récupération des rewards
                     foreach ($sortiesReward as $key => $list) {
-                        if($value->{'Reward'} == $key){
+                        if ($value->{'Reward'} == $key) {
                             $value->{'RewardList'} = $list;
                         }
                     }
 
                     //Change le nom de la saison
                     foreach ($sortiesName as $key => $name) {
-                        if($value->{'Reward'} == $key){
+                        if ($value->{'Reward'} == $key) {
                             $value->{'Reward'} = $name->{'value'};
                         }
                     }
@@ -173,14 +171,15 @@ class AlertsController extends AppController
                 Cache::write('VoidTraders', $alljson->{'VoidTraders'}, 'warjson');
             }
 
-        //Récupération des données en cache
-        $alerts = Cache::read('Alerts', 'warjson');
-        $sorties = Cache::read('Sorties', 'warjson');
-        $traders = Cache::read('VoidTraders', 'warjson');
+            //Récupération des données en cache
+            $alerts = Cache::read('Alerts', 'warjson');
+            $sorties = Cache::read('Sorties', 'warjson');
+            $traders = Cache::read('VoidTraders', 'warjson');
 
-        $this->set('Alerts', $alerts);
-        $this->set('Sorties', $sorties);
-        $this->set('VoidTraders', $traders);
-        $this->set('timenow', time() + $time);
+            $this->set('Alerts', $alerts);
+            $this->set('Sorties', $sorties);
+            $this->set('VoidTraders', $traders);
+            $this->set('timenow', time() + $time);
+        }
     }
 }
