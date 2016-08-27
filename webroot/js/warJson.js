@@ -9,29 +9,41 @@ function warjson(time) {
                 if (datas.timenow <= value.Expiry.sec) {
                     var alertwar = $('<div class="alert"/>');
 
-                    if (value.Activation.sec <= datas.timenow)
-                        alertwar.append($('<span class="label label-success alert-timer expiry"/>').attr({'data-end': value.Expiry.usec,'data': value.Expiry.sec}));
-                    else
-                        alertwar.append($('<span class="label label-default alert-timer activation">').attr({'data-end': value.Activation.usec, 'data': value.Activation.sec}));
-
+                    if (value.Activation.sec <= datas.timenow) {
+                        alertwar.append($('<span class="label label-success alert-timer expiry"/>').attr({
+                            'data-end': value.Expiry.usec,
+                            'data': value.Expiry.sec
+                        }));
+                    }
+                    else {
+                        alertwar.append($('<span class="label label-default alert-timer activation">').attr({
+                            'data-end': value.Activation.usec,
+                            'data': value.Activation.sec
+                        }));
+                    }
                     var ligne = $('<div/>').css({"margin-bottom" : "3px"});
                     ligne.append($('<strong/>').text(value.MissionInfo.location + " "));
 
-                    if (value.MissionInfo.nightmare == true)
+                    if (value.MissionInfo.nightmare == true) {
                         ligne.append($('<span class="label label-danger alert-cauchemar"/>').text('Cauchemar'));
-                    if (value.MissionInfo.archwingRequired == true)
+                    }
+                    if (value.MissionInfo.archwingRequired == true) {
                         ligne.append($('<span class="label label-primary alert-archwing"/>').text('Archwing'));
+                    }
 
                     alertwar.append(ligne);
                     alertwar.append($('<strong/>').text(value.MissionInfo.missionType));
 
                     if (value.MissionInfo.maxWaveNum) {
-                        if (value.MissionInfo.missionType == 'Espionage')
+                        if (value.MissionInfo.missionType == 'Espionage') {
                             alertwar.append($('<spa/>').text(" | Mini. " + value.MissionInfo.maxWaveNum + " données"));
-                        else if (value.MissionInfo.missionType == 'Survie')
+                        }
+                        else if (value.MissionInfo.missionType == 'Survie') {
                             alertwar.append($('<span/>').text(" | " + value.MissionInfo.maxWaveNum + " minutes"));
-                        else
+                        }
+                        else {
                             alertwar.append($('<span/>').text(" | " + value.MissionInfo.maxWaveNum + " vagues"));
+                        }
                     }
 
                     alertwar.append($('<span/>').text(" | " + value.MissionInfo.faction));
@@ -156,10 +168,12 @@ function warjson(time) {
                 voidTraderList.append($('<div class="alert"/>').append($('<h3/>').text('Aucune').css({"text-align" : "center", "margin-top" : "10px"})));
             }
 
-            if (value.Activation.sec <= datas.timenow)
-                $('.tradercountdown').attr({'data-end': value.Expiry.usec,'data': value.Expiry.sec});
-            else
+            if (value.Activation.sec <= datas.timenow) {
+                $('.tradercountdown').attr({'data-end': value.Expiry.usec, 'data': value.Expiry.sec});
+            }
+            else {
                 $('.tradercountdown').attr({'data-end': value.Activation.usec, 'data': value.Activation.sec});
+            }
 
             traderLocation.text(value.Node).css({"text-align" : "center", "margin-top" : "10px"});
 
