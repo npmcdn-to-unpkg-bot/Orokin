@@ -194,5 +194,6 @@ class WorldStateController extends AppController
             $this->set('VoidTraders', $traders);
             $this->set('timenow', time() + $time);
         }
+        $this->set('title', 'World State');
     }
 }

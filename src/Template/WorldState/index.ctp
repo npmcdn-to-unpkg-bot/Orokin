@@ -1,3 +1,6 @@
+<?php $this->start('title') ?>
+    <?= $title ?>
+<?php $this->end() ?>
 <section class="content-wrap">
     <!-- Banner -->
     <section class="youplay-banner small banner-top youplay-banner-parallax">
@@ -58,8 +61,7 @@
         </div>
     </section>
 
-    <div class="container">
-        <h2 style="text-align: center">Offres</h2>
+    <div class="container mt-40">
         <div class="col-md-10 col-md-offset-1 voidTrader"></div>
     </div>
 
@@ -67,8 +69,8 @@
 
 </section>
 
-<?php $this->start('script'); ?>
+<?php $this->start('script') ?>
 
-    <?= $this->Html->script('/js/warJson.js'); ?>
+    <?= $this->Html->script('/js/warJson.js') ?>
 
-<?php $this->end(); ?>
+<?php $this->end() ?>

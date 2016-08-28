@@ -178,5 +178,20 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessFrostAltHelmetBlueprint" : {
     "value" : "Schéma Casque Frost Aurora"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessAshAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Ash Scorpion"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/EnemyShieldReductionAuraMod" : {
+    "value" : "Aura Pertubation du Bouclier"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/HarlequinAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Mirage Harlequin"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerEnergyRegenAuraMod" : {
+    "value" : "Aura Siphon d'Énergie"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/HeatSwordBlueprint" : {
+    "value" : "Schéma Épée de Chaleur"
   }
 }

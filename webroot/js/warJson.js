@@ -176,7 +176,7 @@ function warjson(time) {
                 voidTraderList.append(itemsTable.append(itemsTableHead).append(itemsTableBody));
             }
             else {
-                voidTraderList.append($('<div class="alert"/>').append($('<h3/>').text('Aucune').css({"text-align" : "center", "margin-top" : "10px"})));
+                voidTraderList.append($('<div class="alert"/>').append($('<h3/>').text('Marchand Absent').css({"text-align" : "center", "margin-top" : "10px"})));
             }
 
             if (value.Activation.sec <= datas.timenow) {

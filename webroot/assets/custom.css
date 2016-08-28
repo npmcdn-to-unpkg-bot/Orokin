@@ -80,3 +80,13 @@
     color : green;
 }
 
+.youplay-select::after, .youplay-input::after, .youplay-textarea::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,.1);
+    transform: skew(-7deg);
+    transition: .3s background ease;
+}
+
