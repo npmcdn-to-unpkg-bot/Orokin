@@ -12,7 +12,7 @@
                     $this->Html->image("http://i.imgur.com/7mi7dDR.png", ["alt" => "logo"]),
                     ['controller' => 'Home', 'action' => 'index'],
                     ['escape' => false, 'class' => 'navbar-brand']
-            ); ?>
+            ) ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -31,14 +31,27 @@
                 </li>
                 -->
                 <li>
-                    <a href="<?= $this->Url->build(['controller' => 'Alerts', 'action' => 'index']); ?>">
-                        Alerts
+                    <a href="<?= $this->Url->build(['controller' => 'WorldState', 'action' => 'index']); ?>">
+                        WorldState
                         <span class="badge bg-danger">!</span>
                         <span class="label">En Direct</span>
                     </a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <?php if($this->request->session()->read('Auth.User')): ?>
+                <li class="dropdown dropdown-hover">
+                    <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <?= $this->request->session()->read('Auth.User.username') ?><span class="label">C'est vous !</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul role="menu">
+                            <li><a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'logout']); ?>">Déconnexion</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <?php else: ?>
                 <li class="dropdown dropdown-hover dropdown-cart">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         <i class="fa fa-user"></i>
@@ -65,13 +78,14 @@
                                     <button class="btn btn-sm ml-0 mr-0" name="wp-submit" id="lwa_wp-submit" tabindex="100">Log In</button>
 
                                     <br>
-                                    <p><a href="#">Lost password?</a> | <a href="#">Register</a>
+                                    <p><a href="#">Lost password?</a> | <?= $this->Html->link('Register', ['controller' => 'Users', 'action' => 'add']); ?>
                                     </p>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </li>
+                <?php endif ?>
                 <li>
                     <a class="search-toggle" href="search.html">
                         <i class="fa fa-search"></i>

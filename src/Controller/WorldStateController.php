@@ -6,15 +6,13 @@ use App\Controller;
 use Cake\Cache\Cache;
 //use Cake\Event\Event;
 
-class AlertsController extends AppController
+class WorldStateController extends AppController
 {
     public function index() {
+        if ($this->request->is('ajax')) {
+            $time = $this->request->data['time'];
 
-    }
-
-    public function alerts() {
-        $time = $this->request->data['time'];
-        $time = intval($time);
+            $time = intval($time);
 
             if (Cache::read('Alerts', 'warjson') === false) {
 
@@ -33,6 +31,10 @@ class AlertsController extends AppController
                 $sortiesBoss = json_decode(file_get_contents('./json/sortiesBoss.json'));
                 $missionIndex = json_decode(file_get_contents('./json/missionIndex.json'));
                 $modifierIndex = json_decode(file_get_contents('./json/modifierIndex.json'));
+                $traders = json_decode(file_get_contents('./json/traders.json'));
+
+                //Récupère la version du worldState
+                Cache::write('Version', $alljson->{'Version'}, 'warjson');
 
                 //Alerts
                 foreach ($alljson->{'Alerts'} as $value) {
@@ -96,21 +98,21 @@ class AlertsController extends AppController
 
                     //Récupération du boss
                     foreach ($sortiesBoss as $key => $name) {
-                        if($value->{'Variants'}['0']->{'bossIndex'} == $key){
+                        if ($value->{'Variants'}['0']->{'bossIndex'} == $key) {
                             $value->{'Boss'} = $name->{'value'};
                         }
                     }
 
                     //Récupération des rewards
                     foreach ($sortiesReward as $key => $list) {
-                        if($value->{'Reward'} == $key){
+                        if ($value->{'Reward'} == $key) {
                             $value->{'RewardList'} = $list;
                         }
                     }
 
                     //Change le nom de la saison
                     foreach ($sortiesName as $key => $name) {
-                        if($value->{'Reward'} == $key){
+                        if ($value->{'Reward'} == $key) {
                             $value->{'Reward'} = $name->{'value'};
                         }
                     }
@@ -139,16 +141,59 @@ class AlertsController extends AppController
                         }
                     }
                 }
-                //Mise en cache des données Alertes
+                //Mise en cache des données Sorties
                 Cache::write('Sorties', $alljson->{'Sorties'}, 'warjson');
+
+                //VoidTraders
+
+                foreach ($alljson->{'VoidTraders'} as $value) {
+                    $value->{'Activation'}->{'sec'} = $value->{'Activation'}->{'sec'} + $time;
+                    $value->{'Activation'}->{'usec'} = date("Y-m-d H:i:s", $value->{'Activation'}->{'sec'});
+                    $value->{'Expiry'}->{'sec'} = $value->{'Expiry'}->{'sec'} + $time;
+                    $value->{'Expiry'}->{'usec'} = date("Y-m-d H:i:s", $value->{'Expiry'}->{'sec'});
+
+                    //Change le nom de la mission
+                    foreach ($nodesjson as $key => $node) {
+                        if ($value->{'Node'} == $key) {
+                            $value->{'Node'} = $node->{'value'};
+                        }
+                    }
+                    
+                    //Change le nom du Trader
+                    foreach ($traders as $key => $trader) {
+                        if ($value->{'Character'} == $key) {
+                            $value->{'Character'} = $trader->{'value'};
+                        }
+                    }
+
+                    //Change le nom des rewards
+                    if (isset($value->{'Manifest'})) {
+                        $traderItems = json_decode(file_get_contents('./json/traderItems.json'));
+                        foreach ($value->{'Manifest'} as $item) {
+                            foreach ($traderItems as $key2 => $item2) {
+                                if ($item->{'ItemType'} == $key2) {
+                                    $item->{'ItemType'} = $item2->{'value'};
+                                }
+                            }
+                        }
+                    }
+                }
+                //Mise en cache des données Marchand
+                Cache::write('VoidTraders', $alljson->{'VoidTraders'}, 'warjson');
             }
 
-        //Récupération des données en cache
-        $alerts = Cache::read('Alerts', 'warjson');
-        $sorties = Cache::read('Sorties', 'warjson');
+            //Récupération des données en cache
+            $version = Cache::read('Version', 'warjson');
+            $alerts = Cache::read('Alerts', 'warjson');
+            $sorties = Cache::read('Sorties', 'warjson');
+            $traders = Cache::read('VoidTraders', 'warjson');
 
-        $this->set('Alerts', $alerts);
-        $this->set('Sorties', $sorties);
-        $this->set('timenow', time() + $time);
+            $this->set('Version', $version);
+            $this->set('Alerts', $alerts);
+            $this->set('Sorties', $sorties);
+            $this->set('VoidTraders', $traders);
+            $this->set('timenow', time() + $time);
+        }
+        $this->set('title', 'World State');
     }
 }

@@ -2,6 +2,9 @@
   "0" : {
     "value" : "Extermination"
   },
+  "2" : {
+    "value" : "Sauvetage"
+  },
   "3" : {
     "value" : "Sabotage"
   },
@@ -10,6 +13,9 @@
   },
   "5" : {
     "value" : "Défence"
+  },
+  "7" : {
+    "value" : "Interception"
   },
   "9" : {
     "value" : "Assassinat"

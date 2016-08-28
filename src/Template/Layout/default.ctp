@@ -1,5 +1,3 @@
-<!-- File: src/Template/Alerts/index.ctp -->
-
 <?= $this->Html->docType('html5');?>
 <html lang="fr">
     <head>
@@ -9,13 +7,9 @@
         <?= $this->element('header') ?>
 
         <!-- Main Content -->
-        <section class="content-wrap">
 
-            <?= $this->fetch('content') ?>
-            
-            <?= $this->element('footer') ?>
-            
-        </section>
+        <?= $this->fetch('content') ?>
+
         <!-- /Main Content -->
 
         <?= $this->element('search') ?>
@@ -23,6 +17,5 @@
         <?= $this->element('script') ?>
 
         <?= $this->fetch('script') ?>
-
     </body>
 </html>

@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Network\Exception\UnauthorizedException;
 
 
 /**
@@ -44,6 +45,16 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'loginRedirect' => [
+                'controller' => 'Home',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Home',
+                'action' => 'index'
+            ]
+        ]);
     }
 
     /**
@@ -61,11 +72,11 @@ class AppController extends Controller
         }
     }
 
+
     public function beforeFilter(Event $event)
     {
-        //Utilise un layout différent pour le backoffice
-        if($this->request->prefix == "admin") {
-            $this->viewBuilder()->layout('adminDefault'); // set the layout
+        if($this->request->session()->read('Auth.User.role') != 'admin'){
+            $this->Auth->allow(['index', 'view']);
         }
     }
 }

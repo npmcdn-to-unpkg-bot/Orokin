@@ -2,6 +2,9 @@
   "/Lotus/StoreItems/Types/Recipes/WarframeRecipes/TrapperChassisBlueprint": {
     "value" : "Schéma Chassis Vauban"
   },
+  "/Lotus/StoreItems/Types/Recipes/WarframeRecipes/TrapperSystemsBlueprint" : {
+    "value" : "Schéma Système Vauban"
+  },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessVaubanAltHelmetBlueprint": {
     "value" : "Schéma Casque Vauban Esprit"
   },
@@ -164,16 +167,31 @@
   "/Lotus/StoreItems/Upgrades/Mods/Aura/RobotPoorAimAuraMod" : {
     "value" : "Aura IEM"
   },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/ExcaliburMordredHelmetBlueprint" : {
+    "value" : "Schéma Casque Excalibur Mordred"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2VoltAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Volt Pulse"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/PangolinSwordBlueprint" : {
+    "value" : "Schéma Épée Pangolin"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessFrostAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Frost Aurora"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessAshAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Ash Scorpion"
+  },
   "/Lotus/StoreItems/Upgrades/Mods/Aura/EnemyShieldReductionAuraMod" : {
-    "value" : "Aura Perturbation de Bouclier"
+    "value" : "Aura Pertubation du Bouclier"
   },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/NovaSlipstreamHelmetBlueprint" : {
-    "value" : "Schéma Casque Nova Slipstream"
+  "/Lotus/StoreItems/Types/Recipes/Helmets/HarlequinAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Mirage Harlequin"
   },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessRhinoAltHelmetBlueprint" : {
-    "value" : "Schéma Casque Rhino Thrak"
+  "/Lotus/StoreItems/Upgrades/Mods/Aura/PlayerEnergyRegenAuraMod" : {
+    "value" : "Aura Siphon d'Énergie"
   },
-  "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/IceStormMod" : {
-    "value" : "Tempête de Glace"
+  "/Lotus/StoreItems/Types/Recipes/Weapons/HeatSwordBlueprint" : {
+    "value" : "Schéma Épée de Chaleur"
   }
 }

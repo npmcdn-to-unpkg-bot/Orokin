@@ -49,7 +49,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Home', 'action' => 'index']);
-    $routes->connect('/alerts/', ['controller' => 'Alerts', 'action' => 'index']);
+    $routes->connect('/Connexion', ['controller' => 'Users', 'action' => 'login']);
+    $routes->connect('/Inscription', ['controller' => 'Users', 'action' => 'add']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
@@ -81,9 +82,3 @@ Router::scope('/', function (RouteBuilder $routes) {
  */
 Plugin::routes();
 
-Router::prefix('admin', function ($routes) {
-    // Because you are in the admin scope,
-    // you do not need to include the /admin prefix
-    // or the admin route element.
-    $routes->connect('/', ['controller' => 'Home', 'action' => 'index']);
-});

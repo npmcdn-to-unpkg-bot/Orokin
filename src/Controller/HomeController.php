@@ -24,6 +24,7 @@ class HomeController extends AppController
         //Récupération des données en cache
         //$alljson = Cache::read('Alerts');
 
-        $this->set('Alerts', $alljson);
+        $this->set('alerts', $alljson);
+        $this->set('title', 'Accueil');
     }
 }
