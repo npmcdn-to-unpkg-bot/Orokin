@@ -193,5 +193,11 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Weapons/HeatSwordBlueprint" : {
     "value" : "Schéma Épée de Chaleur"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessNovaAltHelmetBlueprint" : {
+    "value" : "Shéma Casque Flux Nova"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/ConstitutionMod" : {
+    "value" : "Constitution"
   }
 }

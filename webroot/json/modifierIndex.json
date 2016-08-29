@@ -1,6 +1,12 @@
 {
+  "0" : {
+    "value" : "Armure Ennemie Augmentée"
+  },
   "1" : {
     "value" : "Fuite Cryogénique"
+  },
+  "2" : {
+    "value" : "Amélioration Élémentaire des Ennemis"
   },
   "3" : {
     "value" : "Réduction d'Énergie"
@@ -9,6 +15,9 @@
     "value" : "Forteresse Eximus"
   },
   "5" : {
-    "value" : "Fusil d'Assault Seulement"
+    "value" : "FUSIL D'ASSAULT Seulement"
+  },
+  "8" : {
+    "value" : "PISTOLET Seulement"
   }
 }

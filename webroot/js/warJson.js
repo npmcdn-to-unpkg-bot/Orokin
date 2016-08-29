@@ -100,12 +100,8 @@ function warjson(time) {
 
                 sortiesInfo.append($('<span/>').text(value.Reward).css({"font-weight" : "bold"}));
                 sortiesInfo.append($('<div class="sortiesCountdown"/>').attr({'data-end': value.Expiry.usec}));
-                if(value.Boss) {
-                    sortiesInfo.append($('<span/>').text('Ennemi : ').append($('<span/>').text(value.Boss).css({"font-weight": "bold"})));
-                }
-                else {
-                    sortiesInfo.append($('<span/>').text('Ennemi : ').append($('<span/>').text('Non disponible').css({"font-weight": "bold"})));
-                }
+                sortiesInfo.append($('<span/>').text('Ennemi : ').append($('<span/>').text(value.Boss).css({"font-weight": "bold"})));
+
                 $.each(value.RewardList, function (key, reward) {
                     sortiesReward.append($('<span/>').text('- ' + reward)).append('<br/>');
                 });

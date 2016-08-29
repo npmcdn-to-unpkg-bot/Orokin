@@ -17,6 +17,9 @@
   "7" : {
     "value" : "Interception"
   },
+  "8" : {
+    "value" : "Détournement"
+  },
   "9" : {
     "value" : "Assassinat"
   }
