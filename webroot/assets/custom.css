@@ -42,6 +42,10 @@ body {
     background: rgba(10,10,10,.4);
 }
 
+.navbar-youplay .dropdown-menu, .navbar-youplay .navbar-nav > li > .dropdown-menu {
+    background: rgba(10,10,10,.9);
+}
+
 .youplay-banner .image {
     opacity: 0.9;
 }

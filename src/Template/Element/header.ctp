@@ -56,41 +56,13 @@
                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         <i class="fa fa-user"></i>
                     </a>
-                    <div class="dropdown-menu pb-20" style="width: 300px;">
-                        <div class="block-content ml-20 mr-20 mnb-10">
-                            <div class="lwa lwa-default">
-                                <form class="block-content" action="#" method="post">
-                                    <p>Username:</p>
-                                    <div class="youplay-input">
-                                        <input type="text" name="log">
-                                    </div>
+                    <div class="dropdown-menu">
 
-                                    <p>Password:</p>
-                                    <div class="youplay-input">
-                                        <input type="password" name="pwd">
-                                    </div>
+                                <a class="btn btn-warning" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Steam']]); ?>">
+                                    <i class="fa fa-steam"></i>
+                                    Connexion Via Steam
+                                </a>
 
-                                    <div class="youplay-checkbox mb-15 ml-5">
-                                        <input type="checkbox" name="rememberme" value="forever" id="rememberme" tabindex="103">
-                                        <label for="rememberme">Remember Me</label>
-                                    </div>
-
-                                    <button class="btn btn-sm ml-0 mr-0" name="wp-submit" id="lwa_wp-submit" tabindex="100">Log In</button>
-
-                                    <br>
-                                    <p><a href="#">Lost password?</a> | <?= $this->Html->link('Register', ['controller' => 'Users', 'action' => 'add']); ?>
-                                    </p>
-                                </form>
-                                <?= $this->Html->link(
-                                'Login with Google',
-                                ['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Google']]
-                                ); ?>
-                                <?= $this->Html->link(
-                                    'Login with Steam',
-                                    ['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Steam']]
-                                ); ?>
-                            </div>
-                        </div>
                     </div>
                 </li>
                 <?php endif ?>

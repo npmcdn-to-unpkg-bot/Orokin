@@ -199,5 +199,8 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/ConstitutionMod" : {
     "value" : "Constitution"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/Skins/DualDaggerAxeBlueprint" : {
+    "value" : "Schéma Aspect Double Zoren Hache-Dague"
   }
 }

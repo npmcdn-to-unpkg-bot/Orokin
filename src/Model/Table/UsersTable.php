@@ -16,9 +16,8 @@ class UsersTable extends Table
 
     public function createUser(\Cake\Event\Event $event) {
         // Entity representing record in social_profiles table
-        $profile = $event->data()['profile'];
 
-        $user = $this->newEntity(['email' => $profile->email]);
+        $user = $this->newEntity(['email' => null]);
         $user = $this->save($user);
 
         if (!$user) {
