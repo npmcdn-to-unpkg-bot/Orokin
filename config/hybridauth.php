@@ -7,8 +7,15 @@ return [
             'Google' => [
                 'enabled' => true,
                 'keys' => [
-                    'id' => ' 771271471394-n5roai9fpufk5ghrp8hi5fs8mcd7urq6.apps.googleusercontent.com ',
-                    'secret' => ' lPITzfgE8udO421xgE1HFUNn '
+                    'id' => '771271471394-n5roai9fpufk5ghrp8hi5fs8mcd7urq6.apps.googleusercontent.com',
+                    'secret' => 'lPITzfgE8udO421xgE1HFUNn'
+                ]
+            ],
+            'Steam' => [
+                'enabled' => true,
+                'keys' => [
+                    'id' => 'http://steamcommunity.com/openid/id/7FC0BADA5E59E3F09F3EA68129D1F23D',
+                    'secret' => '7FC0BADA5E59E3F09F3EA68129D1F23D'
                 ]
             ],
             'Facebook' => [

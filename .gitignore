@@ -5,3 +5,4 @@
 /.idea/*
 
 robots.txt
+config/hybridauth.php
