@@ -42,7 +42,7 @@
                 <?php if($this->request->session()->read('Auth.User')): ?>
                 <li class="dropdown dropdown-hover">
                     <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <?= $this->request->session()->read('Auth.User.username') ?><span class="label">C'est vous !</span>
+                        <?= $this->request->session()->read('Auth.User.social_profile.display_name') ?><span class="label">C'est vous !</span>
                     </a>
                     <div class="dropdown-menu">
                         <ul role="menu">
@@ -84,6 +84,10 @@
                                 <?= $this->Html->link(
                                 'Login with Google',
                                 ['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Google']]
+                                ); ?>
+                                <?= $this->Html->link(
+                                    'Login with Steam',
+                                    ['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Steam']]
                                 ); ?>
                             </div>
                         </div>

@@ -7,17 +7,24 @@ use Cake\Validation\Validator;
 
 class UsersTable extends Table
 {
-
-    public function validationDefault(Validator $validator)
+    public function initialize(array $config)
     {
-        return $validator
-            ->notEmpty('username', "Un nom d'utilisateur est nécessaire")
-            ->notEmpty('password', 'Un mot de passe est nécessaire')
-            ->notEmpty('role', 'Un role est nécessaire')
-            ->add('role', 'inList', [
-                'rule' => ['inList', ['admin', 'membre']],
-                'message' => 'Merci de rentrer un role valide'
-            ]);
+        $this->hasMany('ADmad/HybridAuth.SocialProfiles');
+
+        \Cake\Event\EventManager::instance()->on('HybridAuth.newUser', [$this, 'createUser']);
     }
 
+    public function createUser(\Cake\Event\Event $event) {
+        // Entity representing record in social_profiles table
+        $profile = $event->data()['profile'];
+
+        $user = $this->newEntity(['email' => $profile->email]);
+        $user = $this->save($user);
+
+        if (!$user) {
+            throw new \RuntimeException('Unable to save new user');
+        }
+
+        return $user;
+    }
 }

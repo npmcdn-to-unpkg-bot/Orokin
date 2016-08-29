@@ -4,35 +4,8 @@ use Cake\Core\Configure;
 return [
     'HybridAuth' => [
         'providers' => [
-            'Google' => [
-                'enabled' => true,
-                'keys' => [
-                    'id' => '771271471394-n5roai9fpufk5ghrp8hi5fs8mcd7urq6.apps.googleusercontent.com',
-                    'secret' => 'lPITzfgE8udO421xgE1HFUNn'
-                ]
-            ],
             'Steam' => [
                 'enabled' => true,
-                'keys' => [
-                    'id' => 'http://steamcommunity.com/openid/id/7FC0BADA5E59E3F09F3EA68129D1F23D',
-                    'secret' => '7FC0BADA5E59E3F09F3EA68129D1F23D'
-                ]
-            ],
-            'Facebook' => [
-                'enabled' => true,
-                'keys' => [
-                    'id' => '<facebook-application-id>',
-                    'secret' => '<secret-key>'
-                ],
-                'scope' => 'email, user_about_me, user_birthday, user_hometown'
-            ],
-            'Twitter' => [
-                'enabled' => true,
-                'keys' => [
-                    'key' => '<twitter-key>',
-                    'secret' => '<twitter-secret>'
-                ],
-                'includeEmail' => true // Only if your app is whitelisted by Twitter Support
             ]
         ],
         'debug_mode' => Configure::read('debug'),
