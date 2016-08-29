@@ -24,8 +24,7 @@
 <?= $this->Html->css('/assets/bower_components/magnific-popup/dist/magnific-popup.css') ?>
 
 <!-- Youplay -->
-<?= $this->Html->css('/assets/youplay/css/youplay-shooter.min.css') ?>
-
+<?= $this->Html->css('/assets/youplay/css/youplay.min.css') ?>
 
 <!-- Custom Styles -->
 <?= $this->Html->css('/assets/custom.css') ?>
