@@ -17,17 +17,6 @@ class UsersController extends AppController
         $this->Auth->allow(['add', 'logout']);
     }
 
-    public function index()
-    {
-        $this->set('users', $this->Users->find('all'));
-    }
-
-    public function view($id)
-    {
-        $user = $this->Users->get($id);
-        $this->set(compact('user'));
-    }
-
     public function add()
     {
         $user = $this->Users->newEntity();
@@ -46,7 +35,7 @@ class UsersController extends AppController
 
     public function login()
     {
-        if ($this->request->is('post')) {
+        if ($this->request->is('post') || $this->request->query('provider')) {
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
@@ -54,7 +43,6 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('Invalid username or password, try again'));
         }
-        $this->set('title', 'Connexion');
     }
 
     public function logout()

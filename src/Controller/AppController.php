@@ -46,13 +46,24 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
-            'loginRedirect' => [
-                'controller' => 'Home',
-                'action' => 'index'
-            ],
-            'logoutRedirect' => [
-                'controller' => 'Home',
-                'action' => 'index'
+            'authenticate' => [
+                'Form',
+                'ADmad/HybridAuth.HybridAuth' => [
+                    // All keys shown below are defaults
+                    'fields' => [
+                        'provider' => 'provider',
+                        'openid_identifier' => 'openid_identifier',
+                        'email' => 'email'
+                    ],
+                    'profileModel' => 'ADmad/HybridAuth.SocialProfiles',
+                    'profileModelFkField' => 'user_id',
+
+                    // The URL Hybridauth lib should redirect to after authentication.
+                    // If no value is specified you are redirect to this plugin's
+                    // HybridAuthController::authenticated() which handles persisting
+                    // user info to AuthComponent and redirection.
+                    'hauth_return_to' => null
+                ]
             ]
         ]);
     }

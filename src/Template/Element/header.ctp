@@ -81,6 +81,10 @@
                                     <p><a href="#">Lost password?</a> | <?= $this->Html->link('Register', ['controller' => 'Users', 'action' => 'add']); ?>
                                     </p>
                                 </form>
+                                <?= $this->Html->link(
+                                'Login with Google',
+                                ['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Google']]
+                                ); ?>
                             </div>
                         </div>
                     </div>
