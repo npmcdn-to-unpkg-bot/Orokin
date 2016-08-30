@@ -54,7 +54,7 @@
     "value" : "Furie Vangeresse"
   },
   "/Lotus/StoreItems/Types/Recipes/Weapons/Skins/GrnAxeBlueprint": {
-    "value" : "Shéma Aspect Hache Manticore"
+    "value" : "Schéma Aspect Hache Manticore"
   },
   "/Lotus/StoreItems/Types/Recipes/Weapons/JawBlueprint" : {
     "value" : "Schéma Épée Jaw"
@@ -195,7 +195,7 @@
     "value" : "Schéma Épée de Chaleur"
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessNovaAltHelmetBlueprint" : {
-    "value" : "Shéma Casque Flux Nova"
+    "value" : "Schéma Casque Flux Nova"
   },
   "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/ConstitutionMod" : {
     "value" : "Constitution"
@@ -208,5 +208,11 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/ZephyrTenguHelmetBlueprint" : {
     "value" : "Schéma Casque Zéphyr Tengu"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/FairyAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Titania Aurai"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/LimboAltBHelmetBlueprint" : {
+    "value" : "Schéma Casque Limbo Magrite"
   }
 }

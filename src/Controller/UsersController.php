@@ -7,6 +7,11 @@ use Cake\Event\Event;
 
 class UsersController extends AppController
 {
+    public function index()
+    {
+        $this->set('users', $this->Users->find('all')->contain(['SocialProfiles']));
+    }
+
     public function login() {
         if ($this->request->is('post') || $this->request->query('provider')) {
             $user = $this->Auth->identify();

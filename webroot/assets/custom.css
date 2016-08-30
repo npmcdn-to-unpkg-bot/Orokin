@@ -46,9 +46,11 @@ body {
     background: rgba(10,10,10,.9);
 }
 
-.youplay-banner .image {
+.youplay-banner .image, .angled-img:hover .img>img, .angled-img .img>img {
     opacity: 0.9;
 }
+
+
 
 
 .label-success::before {
