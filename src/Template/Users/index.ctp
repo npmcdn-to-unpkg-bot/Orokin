@@ -20,6 +20,7 @@
                 <input name="search" placeholder="Search..." autofocus="" type="text">
             </div>
         </form>
+        <br/>
         <div class="row">
             <div class="col-md-6">
 
@@ -28,7 +29,7 @@
                     foreach ($user['social_profiles'] as $userSteam){?>
                         <a href="<?= $userSteam['profile_url']?>" target="_blank" class="angled-bg">
                             <div class="row">
-                                <div class="col-md-3 col-xs-4">
+                                <div class="col-md-3 col-xs-4 userbanner">
                                     <div class="angled-img">
                                         <div class="img">
                                             <img src="<?= $userSteam['photo_url']?>" alt="">

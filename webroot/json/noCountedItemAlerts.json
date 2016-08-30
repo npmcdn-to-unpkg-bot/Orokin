@@ -214,5 +214,8 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/LimboAltBHelmetBlueprint" : {
     "value" : "Schéma Casque Limbo Magrite"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2BansheeAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Banshee Chorus"
   }
 }

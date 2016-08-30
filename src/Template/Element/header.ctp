@@ -57,12 +57,10 @@
                         <i class="fa fa-user"></i>
                     </a>
                     <div class="dropdown-menu">
-
-                                <a class="btn btn-warning" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Steam']]); ?>">
-                                    <i class="fa fa-steam"></i>
-                                    Connexion Via Steam
-                                </a>
-
+                        <a class="btn btn-warning" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Steam']]); ?>">
+                            <i class="fa fa-steam"></i>
+                            Connexion Via Steam
+                        </a>
                     </div>
                 </li>
                 <?php endif ?>

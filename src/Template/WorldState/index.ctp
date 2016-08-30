@@ -66,14 +66,15 @@
         <div class="col-md-6">
             <h2 style="text-align: center">Invasions</h2>
             <div class="col-Invasion">
+                <!--
                 <div class="alert">
-
                     <span class="label label-success" style="float: right;font-weight: bold;font-size: 13px;">Masse Mutagène</span>
                     <div class="progress">
                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
                         <div class="progress-bar progress-bar-info arrow progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
                     </div>
                 </div>
+                -->
             </div>
         </div>
         <div class="col-md-6">

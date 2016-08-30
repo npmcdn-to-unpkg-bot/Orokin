@@ -28,7 +28,7 @@ body {
     background: transparent;
 }
 
-.content-wrap {
+.content-wrap, .angled-img .img {
     max-width: none;
     background: #0a0a0a;
 }
@@ -48,6 +48,14 @@ body {
 
 .youplay-banner .image, .angled-img:hover .img>img, .angled-img .img>img {
     opacity: 0.9;
+}
+
+.userbanner {
+    width: 18%;
+}
+
+.userbanner .angled-img .img {
+    border-left: 3px solid green;
 }
 
 
