@@ -202,5 +202,11 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Weapons/Skins/DualDaggerAxeBlueprint" : {
     "value" : "Schéma Aspect Double Zoren Hache-Dague"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/AcceleratedBlastMod" : {
+    "value" : "Souffle Accéléré"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/ZephyrTenguHelmetBlueprint" : {
+    "value" : "Schéma Casque Zéphyr Tengu"
   }
 }
