@@ -9,7 +9,8 @@ class UsersController extends AppController
 {
     public function index()
     {
-        $this->set('users', $this->Users->find('all')->contain(['SocialProfiles']));
+        $users = $this->Users->find('all')->contain(['SocialProfiles']);
+        $this->set(compact('users'));
     }
 
     public function login() {
