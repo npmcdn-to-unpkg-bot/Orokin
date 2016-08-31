@@ -17,6 +17,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\Network\Exception\UnauthorizedException;
+use Cake\ORM\TableRegistry;
 
 
 /**
@@ -86,8 +87,13 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-        if($this->request->session()->read('Auth.User.role') != 'admin'){
-            $this->Auth->allow(['index', 'view']);
+        $this->Auth->allow();
+
+        if($this->Auth->user() != null) {
+            $usersTable = TableRegistry::get('Users');
+            $user = $usersTable->get($this->Auth->user('id'));
+            $user->last_active = time();
+            $usersTable->save($user);
         }
     }
 }

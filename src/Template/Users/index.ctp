@@ -42,6 +42,10 @@
                                             <h4><?= $userSteam['display_name'] ?></h4>
                                         </div>
                                         <div class="col-xs-6 col-md-3 align-right">
+                                            <?php
+                                                echo $user['last_active'];
+                                                echo \Cake\I18n\Time::now();
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
