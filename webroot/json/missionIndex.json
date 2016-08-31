@@ -2,6 +2,9 @@
   "0" : {
     "value" : "Extermination"
   },
+  "1" : {
+    "value" : "Survie"
+  },
   "2" : {
     "value" : "Sauvetage"
   },
@@ -13,6 +16,9 @@
   },
   "5" : {
     "value" : "Défence"
+  },
+  "6" : {
+    "value" : "Défence Mobile"
   },
   "7" : {
     "value" : "Interception"

@@ -1,23 +1,71 @@
 {
-  "0" : {
-    "value" : "Armure Ennemie Augmentée"
+  "0": {
+    "0": {
+      "value": "Armures Ennemie Augmentée"
+    },
+    "1": {
+      "value": "Fuite Cryogénique"
+    },
+    "2": {
+      "value": "Amélioration Élémentaire des Ennemis"
+    },
+    "3": {
+      "value": "Réduction d'Énergie"
+    },
+    "4": {
+      "value": "Forteresse Eximus"
+    },
+    "5": {
+      "value": "FUSIL D'ASSAULT Seulement"
+    },
+    "8": {
+      "value": "PISTOLET Seulement"
+    }
   },
-  "1" : {
-    "value" : "Fuite Cryogénique"
+  "1": {
+    "0": {
+      "value": "Boucliers Ennemies Augmentée"
+    },
+    "1": {
+      "value": "Fuite Cryogénique"
+    },
+    "2": {
+      "value": "Amélioration Élémentaire des Ennemis"
+    },
+    "3": {
+      "value": "Réduction d'Énergie"
+    },
+    "4": {
+      "value": "Forteresse Eximus"
+    },
+    "5": {
+      "value": "FUSIL D'ASSAULT Seulement"
+    },
+    "8": {
+      "value": "PISTOLET Seulement"
+    }
   },
-  "2" : {
-    "value" : "Amélioration Élémentaire des Ennemis"
-  },
-  "3" : {
-    "value" : "Réduction d'Énergie"
-  },
-  "4" : {
-    "value" : "Forteresse Eximus"
-  },
-  "5" : {
-    "value" : "FUSIL D'ASSAULT Seulement"
-  },
-  "8" : {
-    "value" : "PISTOLET Seulement"
+  "2": {
+    "0": {
+      "value": "Armure Ennemie Augmentée"
+    },
+    "1": {
+      "value": "Fuite Cryogénique"
+    },
+    "2": {
+      "value": "Amélioration Élémentaire des Ennemis"
+    },
+    "3": {
+      "value": "Réduction d'Énergie"
+    },
+    "4": {
+      "value": "Forteresse Eximus"
+    },
+    "5": {
+      "value": "FUSIL D'ASSAULT Seulement"
+    },
+    "8": {
+      "value": "PISTOLET Seulement"
+    }
   }
 }

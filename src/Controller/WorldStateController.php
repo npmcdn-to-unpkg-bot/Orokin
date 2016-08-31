@@ -96,13 +96,6 @@ class WorldStateController extends AppController
                     $value->{'Expiry'}->{'sec'} = $value->{'Expiry'}->{'sec'} + $time;
                     $value->{'Expiry'}->{'usec'} = date("Y-m-d H:i:s", $value->{'Expiry'}->{'sec'});
 
-                    //Récupération du boss
-                    foreach ($sortiesBoss as $key => $name) {
-                        if ($value->{'Variants'}['0']->{'bossIndex'} == $key) {
-                            $value->{'Boss'} = $name->{'value'};
-                        }
-                    }
-
                     //Récupération des rewards
                     foreach ($sortiesReward as $key => $list) {
                         if ($value->{'Reward'} == $key) {
@@ -114,6 +107,14 @@ class WorldStateController extends AppController
                     foreach ($sortiesName as $key => $name) {
                         if ($value->{'Reward'} == $key) {
                             $value->{'Reward'} = $name->{'value'};
+                        }
+                    }
+
+                    //Récupération du boss
+                    foreach ($sortiesBoss as $key => $name) {
+                        if ($value->{'Variants'}['0']->{'bossIndex'} == $key) {
+                            $value->{'Boss'} = $name->{'value'};
+                            $value->{'Type'} = $name->{'type'};
                         }
                     }
 
@@ -134,7 +135,7 @@ class WorldStateController extends AppController
                         }
 
                         //Change le modifier de la mission
-                        foreach ($modifierIndex as $key2 => $mod) {
+                        foreach ($modifierIndex->{$value->{'Type'}} as $key2 => $mod) {
                             if ($variant->{'modifierIndex'} == $key2) {
                                 $variant->{'modifierIndex'} = $mod->{'value'};
                             }
