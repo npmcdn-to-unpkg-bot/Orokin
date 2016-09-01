@@ -2,7 +2,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><?= $this->fetch('title') ?></title>
 
-<meta name="description" content="">
+<meta name="description" content="Clan Fr Warframe">
+<meta name="keywords" content="warframe,jeu vidéo,worldstate,voidtrader,alerts,sorties,steam,réseau,social,news">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
