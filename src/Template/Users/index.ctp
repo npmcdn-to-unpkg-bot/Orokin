@@ -1,4 +1,3 @@
-
 <section class="content-wrap">
 
     <!-- Banner -->
@@ -44,20 +43,11 @@
                                         </div>
                                         <div class="col-xs-6 col-md-3 align-right">
                                             <?php
-<<<<<<< HEAD
                                                 if($user['online'])
                                                     echo 'Connecté';
                                                 else
                                                     echo "Déconnecté";
                                                 echo strtotime($user['last_active'])-strtotime(\Cake\I18n\Time::now());
-=======
-                                                //echo $user['last_active'];
-                                                //echo \Cake\I18n\Time::now();
-                                            if($user['last_active'] == null)
-                                                echo 'déco';
-                                            else
-                                                echo strtotime($user['last_active']) - strtotime(\Cake\I18n\Time::now());
->>>>>>> origin/master
                                             ?>
                                         </div>
                                     </div>
@@ -75,11 +65,3 @@
     <?= $this->element('footer') ?>
 
 </section>
-<?php
-/*
-    $test=2;
-    $this->Html->scriptStart(['block' => true]);
-    echo "alert(".$test.");";
-    $this->Html->scriptEnd();
-*/
-?>
