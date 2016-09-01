@@ -4,6 +4,10 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+<<<<<<< HEAD
+=======
+use Cake\I18n\Time;
+>>>>>>> origin/master
 use Cake\ORM\TableRegistry;
 
 class UsersController extends AppController
@@ -31,6 +35,7 @@ class UsersController extends AppController
 
     public function logout()
     {
+<<<<<<< HEAD
         if($this->Auth->user() != null) {
             $usersTable = TableRegistry::get('Users');
             $user = $usersTable->get($this->Auth->user('id'));
@@ -39,6 +44,15 @@ class UsersController extends AppController
 
             $this->Auth->logout();
         }
+=======
+        if($this->Auth->user('id')) {
+            $usersTable = TableRegistry::get('Users');
+            $user = $usersTable->get($this->Auth->user('id'));
+            $user->last_active = null;
+            $usersTable->save($user);
+        }
+        $this->Auth->logout();
+>>>>>>> origin/master
         return $this->redirect(['controller' => 'Home', 'action' => 'index']);
     }
 }

@@ -45,6 +45,7 @@ class AppController extends Controller
     {
         parent::initialize();
 
+        //$this->loadComponent('Csrf');
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
@@ -89,12 +90,12 @@ class AppController extends Controller
     public function beforeFilter(Event $event)
     {
         $this->Auth->allow();
-
-        if($this->Auth->user() != null) {
+        if($this->Auth->user('id')) {
             $usersTable = TableRegistry::get('Users');
             $user = $usersTable->get($this->Auth->user('id'));
             $user->last_active = Time::now();
             $usersTable->save($user);
         }
+
     }
 }
