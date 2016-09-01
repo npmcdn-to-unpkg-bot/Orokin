@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\I18n\Time;
 use Cake\Network\Exception\UnauthorizedException;
 use Cake\ORM\TableRegistry;
 
@@ -92,7 +93,7 @@ class AppController extends Controller
         if($this->Auth->user() != null) {
             $usersTable = TableRegistry::get('Users');
             $user = $usersTable->get($this->Auth->user('id'));
-            $user->last_active = time();
+            $user->last_active = Time::now();
             $usersTable->save($user);
         }
     }

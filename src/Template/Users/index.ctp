@@ -43,8 +43,11 @@
                                         </div>
                                         <div class="col-xs-6 col-md-3 align-right">
                                             <?php
-                                                echo $user['last_active'];
-                                                echo \Cake\I18n\Time::now();
+                                                if($user['online'])
+                                                    echo 'Connecté';
+                                                else
+                                                    echo "Déconnecté";
+                                                echo strtotime($user['last_active'])-strtotime(\Cake\I18n\Time::now());
                                             ?>
                                         </div>
                                     </div>
