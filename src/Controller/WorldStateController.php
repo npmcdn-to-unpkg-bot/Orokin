@@ -116,6 +116,9 @@ class WorldStateController extends AppController
                             $value->{'Boss'} = $name->{'value'};
                             $value->{'Type'} = $name->{'type'};
                         }
+                        else{
+                            $value->{'Boss'} = $value->{'Variants'}['0']->{'bossIndex'};
+                        }
                     }
 
                     foreach ($value->{'Variants'} as $key => $variant) {
@@ -135,9 +138,11 @@ class WorldStateController extends AppController
                         }
 
                         //Change le modifier de la mission
-                        foreach ($modifierIndex->{$value->{'Type'}} as $key2 => $mod) {
-                            if ($variant->{'modifierIndex'} == $key2) {
-                                $variant->{'modifierIndex'} = $mod->{'value'};
+                        if(isset($value->{'Type'})) {
+                            foreach ($modifierIndex->{$value->{'Type'}} as $key2 => $mod) {
+                                if ($variant->{'modifierIndex'} == $key2) {
+                                    $variant->{'modifierIndex'} = $mod->{'value'};
+                                }
                             }
                         }
                     }

@@ -15,9 +15,9 @@
 
 
     <div class="container youplay-search">
-        <form action="search.html">
+        <form action="/">
             <div class="youplay-input">
-                <input name="search" placeholder="Search..." autofocus="" type="text">
+                <input name="search" placeholder="Search..." type="text">
             </div>
         </form>
         <br/>

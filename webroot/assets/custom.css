@@ -54,13 +54,6 @@ body {
     width: 18%;
 }
 
-.userbanner .angled-img .img {
-    border-left: 3px solid green;
-}
-
-
-
-
 .label-success::before {
     background: #007E29;
 }

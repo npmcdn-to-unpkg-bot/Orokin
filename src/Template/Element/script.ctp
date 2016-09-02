@@ -41,3 +41,14 @@
         });
     }
 </script>
+
+<?php if($this->request->session()->read('Auth.User')):?>
+    <script type="text/javascript">
+        function activity() {
+            $.post('Users/activity',function() {
+                setTimeout('activity()', 5000);
+            }, 'json');
+        }
+        activity();
+    </script>
+<?php endif; ?>
