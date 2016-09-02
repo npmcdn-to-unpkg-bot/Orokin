@@ -4,14 +4,14 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
-use Cake\ORM\TableRegistry;
 
 class UsersController extends AppController
 {
     public function index()
     {
-        $users = $this->Users->find('all')->contain(['SocialProfiles']);
-        $this->set(compact('users'));
+        $this->set('allUsers', $this->Users->find('all')->contain(['SocialProfiles']));
+
+
     }
 
     public function login() {
@@ -19,26 +19,29 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-
-                $usersTable = TableRegistry::get('Users');
-                $user = $usersTable->get($this->Auth->user('id'));
-                $user->online = true;
-                $usersTable->save($user);
+                return $this->redirect($this->Auth->redirectUrl());
             }
         }
-        return $this->redirect($this->Auth->redirectUrl());
     }
 
     public function logout()
     {
+        //Si un utilisateur est en session, j'entre
         if($this->Auth->user() != null) {
-            $usersTable = TableRegistry::get('Users');
-            $user = $usersTable->get($this->Auth->user('id'));
-            $user->online = false;
-            $usersTable->save($user);
 
+            //On récupère en base toutes les données de l'utilisateur, grâce à son 'id" en session
+            $user = $this->Users->get($this->Auth->user('id'));
+
+            //On dit à la base que l'utilisateur est déconnecté
+            $user->online = false;
+
+            //On sauvegarde les changements apportés à l'utilisateur dans la base
+            $this->Users->save($user);
+
+            //On détruit la session de l'utilisateur
             $this->Auth->logout();
         }
+        //On redirige l'utilisateur vers l'Accueil
         return $this->redirect(['controller' => 'Home', 'action' => 'index']);
     }
 }

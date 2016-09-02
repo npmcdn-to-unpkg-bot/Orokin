@@ -25,7 +25,7 @@
             <div class="col-md-6">
 
                 <?php
-                foreach ($users as $user){
+                foreach ($allUsers as $user){
                     foreach ($user['social_profiles'] as $userSteam){?>
                         <a href="<?= $userSteam['profile_url']?>" target="_blank" class="angled-bg">
                             <div class="row">

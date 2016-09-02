@@ -49,6 +49,11 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
+            'loginRedirect' => [
+                'controller' => 'Users',
+                'action' => 'online',
+                'plugin' => false
+            ],
             'authenticate' => [
                 'Form',
                 'ADmad/HybridAuth.HybridAuth' => [
@@ -89,13 +94,29 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow();
-        if($this->Auth->user('id')) {
-            $usersTable = TableRegistry::get('Users');
-            $user = $usersTable->get($this->Auth->user('id'));
-            $user->last_active = Time::now();
-            $usersTable->save($user);
-        }
+        //Autorisation
+        $this->Auth->allow();//Tout le monde peux tout faire
 
+        //On charge le model Users pour ce qui suit
+        $this->loadModel('Users');
+
+        //Si un utilisateur est en session, j'entre
+        if($this->Auth->user() != null) {
+
+            //On récupère en base toutes les données de l'utilisateur, grâce à son 'id" en session
+            $user = $this->Users->get($this->Auth->user('id'));
+
+            //Si la base dit que l'utilisateur est déconnecté, j'entre
+            //if(!$user->online) {
+                //On dit à la base que l'utilisateur est connecté
+                //$user->online = true;
+            //}
+
+            //On met en base le datetime da la dernère activité de l'utilisateur
+            $user->last_active = Time::now();
+
+            //On sauvegarde les changements apportés à l'utilisateur dans la base
+            $this->Users->save($user);
+        }
     }
 }
