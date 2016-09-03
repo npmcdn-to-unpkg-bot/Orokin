@@ -49,11 +49,6 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
-            'loginRedirect' => [
-                'controller' => 'Users',
-                'action' => '_online',
-                'plugin' => false
-            ],
             'authenticate' => [
                 'Form',
                 'ADmad/HybridAuth.HybridAuth' => [
@@ -96,21 +91,5 @@ class AppController extends Controller
     {
         //Autorisation
         $this->Auth->allow();//Tout le monde peux tout faire
-
-        //On charge le model Users pour ce qui suit
-        //$this->loadModel('Users');
-
-        //Si un utilisateur est en session, j'entre
-       // if($this->Auth->user() != null) {
-
-            //On récupère en base toutes les données de l'utilisateur, grâce à son 'id" en session
-           // $user = $this->Users->get($this->Auth->user('id'));
-
-            //On met en base le datetime da la dernère activité de l'utilisateur
-           // $user->last_active = Time::now();
-
-            //On sauvegarde les changements apportés à l'utilisateur dans la base
-           // $this->Users->save($user);
-        //}
     }
 }

@@ -48,12 +48,11 @@
 
     <div class="h2"></div>
     <section class="youplay-banner youplay-banner-parallax small" id="exclusive">
-        <div class="image" style="background-image: url('http://i.imgur.com/lPpEwSu.png');" data-speed="-0.5">
-        </div>
+        <div class="image" style="background-image: url('http://i.imgur.com/lPpEwSu.png');" data-speed="-0.5"></div>
         <div class="info container align-center">
             <div>
                 <h2 class="traderName"></h2>
-                <div class="countdown tradercountdown h2 style-1" data-end="2017-01-21 12:00" data-timezone="EST"></div>
+                <div class="countdown tradercountdown h2 style-1" data-end="2017-01-21 12:00" data-timezone="UTC"></div>
                 <br/>
                 <h3 class="typeTraderLocation"></h3>
                 <h3 class="traderLocation"></h3>
@@ -78,8 +77,8 @@
             </div>
         </div>
         <div class="col-md-6">
-            <h2 style="text-align: center">Fissure</h2>
-            <div class="col-Invasion"></div>
+            <h2 style="text-align: center">Fissures</h2>
+            <div class="col-Fissures"></div>
         </div>
     </div>
 
@@ -89,6 +88,6 @@
 
 <?php $this->start('script') ?>
 
-    <?= $this->Html->script('/js/warJson.min.js') ?>
+    <?= $this->Html->script('/js/warJson.js') ?>
 
 <?php $this->end() ?>

@@ -27,7 +27,8 @@
                 <?php
                 foreach ($allUsers as $user){
                     foreach ($user['social_profiles'] as $userSteam){?>
-                        <a href="<?= $userSteam['profile_url']?>" target="_blank" class="angled-bg">
+                        <?php $active = (strtotime(\Cake\I18n\Time::now())-strtotime($user['last_active']) < 15) ? '1' : '0' ?>
+                        <a href="<?= $userSteam['profile_url']?>" target="_blank" class="angled-bg status<?= $active ?>">
                             <div class="row">
                                 <div class="col-md-3 col-xs-4 userbanner">
                                     <div class="angled-img">
@@ -41,15 +42,7 @@
                                         <div class="col-xs-6 col-md-9">
                                             <h4><?= $userSteam['display_name'] ?></h4>
                                         </div>
-                                        <div class="col-xs-6 col-md-3 align-right">
-                                            <?php
-                                                if($user['online'])
-                                                    echo 'Connecté';
-                                                else
-                                                    echo "Déconnecté";
-                                                echo strtotime($user['last_active'])-strtotime(\Cake\I18n\Time::now());
-                                            ?>
-                                        </div>
+                                        <div class="col-xs-6 col-md-3 align-right"></div>
                                     </div>
                                 </div>
                             </div>

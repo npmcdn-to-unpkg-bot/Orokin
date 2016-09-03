@@ -217,5 +217,20 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2BansheeAltHelmetBlueprint" : {
     "value" : "Schéma Casque Banshee Chorus"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/RangerAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Ivara Loxley"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/PirateAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Hydroid Triton"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Components/OrokinCatalystBlueprint" : {
+    "value" : "Schéma Catalyseur Orokin"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Components/FormaBlueprint" : {
+    "value" : "Schéma Forma"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessEmberAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Ember Phéonix"
   }
 }

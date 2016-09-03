@@ -54,6 +54,14 @@ body {
     width: 18%;
 }
 
+.status1::after {
+    border-right: 3px solid green;
+}
+
+.status0::after {
+    border-right: 3px solid red;
+}
+
 .label-success::before {
     background: #007E29;
 }

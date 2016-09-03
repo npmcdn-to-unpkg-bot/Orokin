@@ -46,7 +46,7 @@
     <script type="text/javascript">
         function activity() {
             $.post('Users/activity',function() {
-                setTimeout('activity()', 5000);
+                setTimeout('activity()', 10000);
             }, 'json');
         }
         activity();

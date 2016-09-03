@@ -31,6 +31,12 @@
                 </li>
                 -->
                 <li>
+                    <a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>">
+                        [Dev]Membres
+                        <span class="label">Communauté</span>
+                    </a>
+                </li>
+                <li>
                     <a href="<?= $this->Url->build(['controller' => 'WorldState', 'action' => 'index']); ?>">
                         WorldState
                         <span class="badge bg-danger">!</span>
