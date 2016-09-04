@@ -232,5 +232,8 @@
   },
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessEmberAltHelmetBlueprint" : {
     "value" : "Schéma Casque Ember Phéonix"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/IceStormMod" : {
+    "value" : "Tempête de Glace"
   }
 }

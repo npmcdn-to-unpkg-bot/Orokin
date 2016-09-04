@@ -78,7 +78,38 @@
         </div>
         <div class="col-md-6">
             <h2 style="text-align: center">Fissures</h2>
-            <div class="col-Fissures"></div>
+            <div class="col-Fissures">
+                <div class="alert">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3" style="text-align: center">
+                            <h4 style="font-size: 30px; margin: 0">LITH</h4>
+                        </div>
+                        <div class="col-md-9 col-xs-9">
+                            <span data="1473003869" data-end="2016-11-04 15:44:29" class="label label-success alert-timer expiry">
+                        <span>
+                            <span>00</span>
+                        </span>
+                        <span>J </span>
+                        <span>
+                            <span>00</span>
+                        </span>
+                        <span>h </span>
+                        <span>
+                            <span>14</span>
+                        </span>
+                        <span>m </span>
+                        <span>
+                            <span>45</span>
+                        </span>
+                        <span>s </span>
+                    </span>
+                            <span style="font-weight: bold;">Kelpie (Sedna)</span>
+                            <br/>
+                            <span style="font-weight: bold;">Interception</span><span> | Grinner</span><span> | 80 - 100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
