@@ -54,6 +54,21 @@ body {
     width: 18%;
 }
 
+.navbar-youplay.navbar-small .navbar-header, .search-block {
+    background: #0a0a0a;
+}
+
+@media (max-width:767px) {
+    .navbar-youplay .navbar-collapse {
+        background: #0a0a0a;
+    }
+
+    .navbar-youplay .navbar-header
+    {
+        background: rgba(10,10,10,.4);
+    }
+}
+
 .status1::after {
     border-right: 3px solid green;
 }
