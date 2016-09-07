@@ -89,6 +89,10 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
+        //if(isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin'))
+        //{
+            //$this->viewBuilder()->layout("loginUI");
+        //}
         //Autorisation
         $this->Auth->allow();//Tout le monde peux tout faire
     }
