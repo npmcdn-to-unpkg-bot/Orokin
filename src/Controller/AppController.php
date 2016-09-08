@@ -84,16 +84,27 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+
+        if($this->params['prefix'] == 'admin')
+        {
+            $this->viewBuilder()->layout('default_admin');
+        }
+        else
+        {
+            $this->viewBuilder()->layout('default');
+        }
     }
 
 
     public function beforeFilter(Event $event)
     {
-        //if(isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin'))
-        //{
-            //$this->viewBuilder()->layout("loginUI");
-        //}
-        //Autorisation
-        $this->Auth->allow();//Tout le monde peux tout faire
+        if($this->params['prefix'] == 'admin')
+        {
+            $this->Auth->allow();//Tout le monde peux tout faire
+        }
+        else
+        {
+            $this->Auth->allow();//Tout le monde peux tout faire
+        }
     }
 }
