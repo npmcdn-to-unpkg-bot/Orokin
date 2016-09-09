@@ -2,7 +2,7 @@
 use Cake\Core\Configure;
 use Cake\Error\Debugger;
 
-$this->layout = 'default';
+$this->layout = 'error';
 
 if (Configure::read('debug')):
     $this->layout = 'dev_error';
@@ -30,28 +30,12 @@ if (Configure::read('debug')):
 
     $this->end();
 endif; ?>
-<?php if(h($message) == "Not Found") : ?>
-    <section class="content-wrap full youplay-404">
-        <div class="youplay-banner banner-top">
-            <div class="image" style="background-image: url('https://i.imgur.com/wQzVkEt.jpg')">
-            </div>
-            <div class="info">
-                <div>
-                    <div class="container align-center">
-                        <h2 class="h1">404</h2>
-                        <h3>Page Non Trouvée</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<?php else: ?>
-    <h2><?= h($message) ?></h2>
-    <p class="error">
-        <strong><?= __d('cake', 'Error') ?>: </strong>
-        <?= sprintf(
-            __d('cake', 'The requested address %s was not found on this server.'),
-            "<strong>'{$url}'</strong>"
-        ) ?>
-    </p>
-<?php endif; ?>
+
+<h2><?= h($message) ?></h2>
+<p class="error">
+    <strong><?= __d('cake', 'Error') ?>: </strong>
+    <?= sprintf(
+        __d('cake', 'The requested address %s was not found on this server.'),
+        "<strong>'{$url}'</strong>"
+    ) ?>
+</p>

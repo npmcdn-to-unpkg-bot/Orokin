@@ -14,6 +14,7 @@
  */
 namespace App\Controller;
 
+use Cake\Controller\Component\AuthComponent;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\I18n\Time;
@@ -84,20 +85,29 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+    }
 
-        if($this->request->params['prefix'] == 'admin')
+    public function beforeFilter(Event $event)
+    {
+        if(isset($this->request->params['prefix']))
         {
-            $this->viewBuilder()->layout('default_admin');
+            if($this->request->params['prefix'] == 'admin')
+            {
+                if ($this->Auth->user() && $this->Auth->user('role') >= 75)
+                {
+                    $this->viewBuilder()->layout('default_admin');
+                    $this->Auth->allow();//Tout le monde peux tout faire
+                }
+                else
+                {
+                    throw new UnauthorizedException(__('Cette zone ne vous est pas destiné Tenno'));
+                }
+            }
         }
         else
         {
             $this->viewBuilder()->layout('default');
+            $this->Auth->allow();//Tout le monde peux tout faire
         }
-    }
-
-
-    public function beforeFilter(Event $event)
-    {
-        $this->Auth->allow();//Tout le monde peux tout faire
     }
 }
