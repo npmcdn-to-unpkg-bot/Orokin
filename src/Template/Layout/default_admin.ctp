@@ -123,7 +123,7 @@
                         </li>
                         <li>
                             <a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'index']); ?>">
-                                <span class="icon fa fa-user"></span><span class="title">Membres</span>
+                                <span class="icon fa fa-group"></span><span class="title">Membres</span>
                             </a>
                         </li>
                         <li class="panel panel-default dropdown">
