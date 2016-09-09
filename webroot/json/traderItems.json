@@ -37,5 +37,44 @@
   },
   "/Lotus/StoreItems/Upgrades/Skins/Liset/Gyroscope/LisetGyroscopeSkinPrimeTrader" : {
     "value" : "Aspect Xiphos Prisma"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Melee/WeaponEventSlashDamageMod" : {
+    "value" : "Rabat-Joie"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Shotgun/WeaponEventSlashDamageMod" : {
+    "value" : "Dentelure Balayante"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Pistol/WeaponEventSlashDamageMod" : {
+    "value" : "Mutilation"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Sentinels/Masks/BaroPetMask" : {
+    "value" : "Masque de Sentinelle Ki'Teer"
+  },
+  "/Lotus/StoreItems/Weapons/Grineer/Melee/GrineerMachetteAndCleaver/PrismaDualCleavers" : {
+    "value" : "Doubles Hachoirs Prisma"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Liset/LisetSkinVoidTrader" : {
+    "value" : "Aspect Liset Prisma"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Scarves/VTHornSkullScarf" : {
+    "value" : "Syandana Hecate Prisma"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Pistol/Expert/WeaponClipMaxModExpert" : {
+    "value" : "Chargeur Glissant Accru"
+  },
+  "/Lotus/Types/StoreItems/Packages/ThreeDayAffinityPack" : {
+    "value" : "Booster d'Affinité"
+  },
+  "/Lotus/StoreItems/Types/BoosterPacks/UncommonArtifactPack" : {
+    "value" : "Pack de Mods Faucon"
+  },
+  "/Lotus/StoreItems/Upgrades/Mods/Rifle/WeaponEventSlashDamageMod" : {
+    "value" : "Fusillade de Crocs"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Operator/Accessories/EarpieceBaroA" : {
+    "value" : "Ki'Teer Earpiece"
+  },
+  "/Lotus/StoreItems/Upgrades/Skins/Operator/Accessories/EarpieceBaroB" : {
+    "value" : "Ki'Teer Solo Earpiece"
   }
 }
