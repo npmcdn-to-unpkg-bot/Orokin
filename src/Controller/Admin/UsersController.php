@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\I18n\Time;
+use Cake\Network\Exception\NotFoundException;
 
 class UsersController extends AppController
 {
@@ -16,18 +17,25 @@ class UsersController extends AppController
     public function edit($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Roles']
+            'contain' => ['Roles', 'SocialProfiles']
         ]);
-        if ($this->request->is(['post', 'put'])) {
+
+        if (empty($user)) {
+            throw new NotFoundException(__('Cette utilisateur n\'existe pas'));
+        }
+
+        if ($this->request->is(['post', 'put']))
+        {
             $this->Users->patchEntity($user, $this->request->data, ['associated' => ['Roles']]);
-            if ($this->Users->save($user)) {
+
+            if ($this->Users->save($user))
+            {
                 return $this->redirect(['action' => 'index']);
             }
         }
 
         $this->loadModel('Roles');
-        $roles = $this->Roles->find('list');
-        $this->set('roles', $roles);
+        $this->set('roles', $this->Roles->find('list'));
         $this->set('user', $user);
     }
 

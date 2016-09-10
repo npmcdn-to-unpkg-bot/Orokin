@@ -5,6 +5,7 @@
     <?= $this->Html->charset();?>
     <title>Administration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/images/icon.png">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
@@ -115,20 +116,20 @@
     </footer>
     <div>
         <!-- Javascript Libs -->
-<?= $this->Html->script("/assets_admin/lib/js/jquery.min.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/bootstrap.min.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/Chart.min.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/bootstrap-switch.min.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/jquery.matchHeight-min.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/jquery.dataTables.min.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/dataTables.bootstrap.min.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/select2.full.min.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/ace/ace.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/ace/mode-html.js") ?>
-<?= $this->Html->script("/assets_admin/lib/js/ace/theme-github.js") ?>
-        <!-- Javascript -->
-<?= $this->Html->script("/assets_admin/js/app.js") ?>
-<?= $this->Html->script("/assets_admin/js/index.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/jquery.min.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/bootstrap.min.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/Chart.min.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/bootstrap-switch.min.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/jquery.matchHeight-min.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/jquery.dataTables.min.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/dataTables.bootstrap.min.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/select2.full.min.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/ace/ace.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/ace/mode-html.js") ?>
+    <?= $this->Html->script("/assets_admin/lib/js/ace/theme-github.js") ?>
+            <!-- Javascript -->
+    <?= $this->Html->script("/assets_admin/js/app.js") ?>
+    <?= $this->Html->script("/assets_admin/js/index.js") ?>
 </body>
 
 </html>

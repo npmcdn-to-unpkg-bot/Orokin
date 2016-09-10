@@ -24,12 +24,6 @@ class HomeController extends AppController
         //Récupération des données en cache
         //$alljson = Cache::read('Alerts');
 
-        $this->loadModel('Users');
-        if($this->Auth->user() != null){
-                $user = $this->Users->get($this->Auth->user('id'));
-                $this->set('user_status', $user->online);
-        }
-
         $this->set('alerts', $alljson);
         $this->set('title', 'Accueil');
     }

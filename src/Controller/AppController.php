@@ -89,11 +89,22 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
+        if($this->Auth->user('id'))
+        {
+            $this->loadModel('Users');
+            $user = $this->Users->get($this->Auth->user('id'));
+
+            if($user->admin != $this->Auth->user('admin'))
+                $this->request->session()->write('Auth.User.admin', $user->admin);
+
+            $this->Users->save($user);
+        }
+
         if(isset($this->request->params['prefix']))
         {
             if($this->request->params['prefix'] == 'admin')
             {
-                if ($this->Auth->user() && $this->Auth->user('admin'))
+                if ($this->Auth->user() && $this->Auth->user('admin') )
                 {
                     $this->viewBuilder()->layout('default_admin');
                     $this->Auth->allow();//Tout le monde peux tout faire

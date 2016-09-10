@@ -35,7 +35,10 @@
                                 <tr>
                                     <td><?= $role['id'] ?></td>
                                     <td><?= $role['nom'] ?></td>
-                                    <td><a href="<?= $this->Url->build(['controller' => 'Roles', 'action' => 'edit', $role['id']]); ?>" type="button" class="btn btn-sm btn-info"><i class="fa fa-wrench"></i></a></td>
+                                    <td>
+                                        <a href="<?= $this->Url->build(['controller' => 'Roles', 'action' => 'edit', $role['id']]); ?>" type="button" class="btn btn-sm btn-info"><i class="fa fa-wrench"></i></a>
+                                        <a href="<?= $this->Url->build(['controller' => 'Roles', 'action' => 'delete', $role['id']]); ?>" type="button" class="btn btn-sm btn-danger"><i class="fa fa-close"></i></a>
+                                    </td>
                                 </tr>
                                 <?php
                             }
