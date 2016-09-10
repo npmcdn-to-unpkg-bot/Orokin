@@ -10,6 +10,7 @@ class UsersTable extends Table
     public function initialize(array $config)
     {
         $this->hasMany('ADmad/HybridAuth.SocialProfiles');
+        $this->belongsTo('Roles');
 
         \Cake\Event\EventManager::instance()->on('HybridAuth.newUser', [$this, 'createUser']);
     }
@@ -25,5 +26,11 @@ class UsersTable extends Table
         }
 
         return $user;
+    }
+
+    public function validationDefault(Validator $validator)
+    {
+        return $validator
+            ->notEmpty('role_id', 'Un role est nécessaire');
     }
 }

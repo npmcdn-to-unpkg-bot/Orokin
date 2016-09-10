@@ -10,7 +10,25 @@ class UsersController extends AppController
 {
     public function index()
     {
-        $this->set('allUsers', $this->Users->find('all')->contain(['SocialProfiles']));
+        $this->set('allUsers', $this->Users->find('all')->contain(['SocialProfiles','Roles']));
+    }
+
+    public function edit($id = null)
+    {
+        $user = $this->Users->get($id, [
+            'contain' => ['Roles']
+        ]);
+        if ($this->request->is(['post', 'put'])) {
+            $this->Users->patchEntity($user, $this->request->data, ['associated' => ['Roles']]);
+            if ($this->Users->save($user)) {
+                return $this->redirect(['action' => 'index']);
+            }
+        }
+
+        $this->loadModel('Roles');
+        $roles = $this->Roles->find('list');
+        $this->set('roles', $roles);
+        $this->set('user', $user);
     }
 
     public function logout()
@@ -31,6 +49,6 @@ class UsersController extends AppController
             $this->Auth->logout();
         }
         //On redirige l'utilisateur vers l'Accueil
-        return $this->redirect(['controller' => 'Home', 'action' => 'index']);
+        return $this->redirect(['controller' => 'Home', 'action' => 'index', 'prefix' => false]);
     }
 }

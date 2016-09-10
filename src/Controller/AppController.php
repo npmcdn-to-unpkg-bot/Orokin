@@ -93,14 +93,14 @@ class AppController extends Controller
         {
             if($this->request->params['prefix'] == 'admin')
             {
-                if ($this->Auth->user() && $this->Auth->user('role') >= 75)
+                if ($this->Auth->user() && $this->Auth->user('admin'))
                 {
                     $this->viewBuilder()->layout('default_admin');
                     $this->Auth->allow();//Tout le monde peux tout faire
                 }
                 else
                 {
-                    throw new UnauthorizedException(__('Cette zone ne vous est pas destiné Tenno'));
+                    throw new UnauthorizedException(__('Vous n\'êtes pas admis en ce lieu.'));
                 }
             }
         }
