@@ -5,8 +5,7 @@ return [
     'HybridAuth' => [
         'providers' => [
             'Steam' => [
-                'enabled' => true,
-                'login_start' => 'http://localhost/Orokin/users'
+                'enabled' => true
             ]
         ],
         'debug_mode' => Configure::read('debug'),
