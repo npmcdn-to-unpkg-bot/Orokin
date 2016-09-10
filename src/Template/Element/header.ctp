@@ -58,23 +58,19 @@
                     </div>
                 </li>
                 <?php else: ?>
-                <li class="dropdown dropdown-hover dropdown-cart">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <i class="fa fa-user"></i>
+                <li>
+                    <a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Steam']]); ?>">
+                        Connexion <i class="fa fa-steam"></i>
                     </a>
-                    <div class="dropdown-menu">
-                        <a class="btn btn-warning" href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Steam']]); ?>">
-                            <i class="fa fa-steam"></i>
-                            Connexion Via Steam
-                        </a>
-                    </div>
                 </li>
                 <?php endif ?>
+                <!--
                 <li>
                     <a class="search-toggle" href="search.html">
                         <i class="fa fa-search"></i>
                     </a>
                 </li>
+                -->
             </ul>
         </div>
     </div>
