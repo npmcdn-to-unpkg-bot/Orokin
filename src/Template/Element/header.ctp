@@ -39,7 +39,7 @@
                 <li>
                     <a href="<?= $this->Url->build(['controller' => 'WorldState', 'action' => 'index']); ?>">
                         WorldState
-                        <span class="badge bg-danger">!</span>
+                        <span class="badge bg-danger" style="position: relative;margin-top: -16px;margin-left: -8px">!</span>
                         <span class="label">En Direct</span>
                     </a>
                 </li>
@@ -60,7 +60,8 @@
                 <?php else: ?>
                 <li>
                     <a href="<?= $this->Url->build(['controller' => 'Users', 'action' => 'login', '?' => ['provider' => 'Steam']]); ?>">
-                        Connexion <i class="fa fa-steam"></i>
+                        Connexion
+                        <span class="label">Via Steam <i class="fa fa-steam"></i></span>
                     </a>
                 </li>
                 <?php endif ?>
