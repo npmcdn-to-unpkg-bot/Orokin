@@ -5,10 +5,10 @@
                 <a href="#">
                     <div class="card red summary-inline">
                         <div class="card-body">
-                            <i class="icon fa fa-inbox fa-4x"></i>
+                            <i class="icon fa fa-group fa-4x"></i>
                             <div class="content">
-                                <div class="title">50</div>
-                                <div class="sub-title">New Mails</div>
+                                <div class="title"><?= $usersNub ?></div>
+                                <div class="sub-title">Membres</div>
                             </div>
                             <div class="clear-both"></div>
                         </div>

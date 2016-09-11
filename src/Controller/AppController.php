@@ -89,25 +89,47 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-        if($this->Auth->user('id'))
+        $this->loadModel('Users');
+
+        if ($this->Auth->user())
         {
-            $this->loadModel('Users');
             $user = $this->Users->get($this->Auth->user('id'));
 
-            if($user->admin != $this->Auth->user('admin'))
-                $this->request->session()->write('Auth.User.admin', $user->admin);
+            if($user->role_id != $this->Auth->user('role_id'))
+            {
+                $this->request->session()->write('Auth.User.role_id', $user->role_id);
 
-            $this->Users->save($user);
+                $this->Users->save($user);
+            }
+
+            $this->loadModel('Roles');
+
+            $role = $this->Roles->get($user->role_id);
+
+            $this->request->session()->write('Auth.User.role', $role);
         }
 
         if(isset($this->request->params['prefix']))
         {
             if($this->request->params['prefix'] == 'admin')
             {
-                if ($this->Auth->user() && $this->Auth->user('admin') )
+                if ($this->Auth->user())
                 {
-                    $this->viewBuilder()->layout('default_admin');
-                    $this->Auth->allow();//Tout le monde peux tout faire
+                    $user = $this->Users->get($this->Auth->user('id'));
+
+                    if($user->admin != $this->Auth->user('admin'))
+                        $this->request->session()->write('Auth.User.admin', $user->admin);
+
+                    if ($this->request->session()->read('Auth.User.admin'))
+                    {
+                        $this->viewBuilder()->layout('default_admin');
+                        $this->Auth->allow();//Tout le monde peux tout faire
+                    }
+                    else
+                    {
+                        throw new UnauthorizedException(__('Vous n\'êtes pas admis en ce lieu.'));
+                    }
+
                 }
                 else
                 {

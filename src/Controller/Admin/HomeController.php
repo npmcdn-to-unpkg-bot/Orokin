@@ -15,6 +15,7 @@ class HomeController extends AppController
 {
     public function index()
     {
-        
+        $this->loadModel('Users');
+        $this->set('usersNub', $this->Users->find()->count());
     }
 }
