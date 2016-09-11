@@ -9,7 +9,6 @@
 namespace App\Controller;
 
 use App\Controller;
-use Cake\Cache\Cache;
 
 class HomeController extends AppController
 {

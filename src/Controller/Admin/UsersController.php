@@ -3,8 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
-use Cake\Event\Event;
-use Cake\I18n\Time;
 use Cake\Network\Exception\NotFoundException;
 
 class UsersController extends AppController

@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Controller;
 use Cake\Cache\Cache;
-use Cake\Event\Event;
 
 class WorldStateController extends AppController
 {

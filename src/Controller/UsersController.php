@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Controller\AppController;
-use Cake\Event\Event;
 use Cake\I18n\Time;
 
 class UsersController extends AppController

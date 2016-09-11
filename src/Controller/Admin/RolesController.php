@@ -3,7 +3,6 @@
 namespace App\Controller\admin;
 
 use App\Controller\AppController;
-use Cake\Cache\Cache;
 use Cake\Network\Exception\NotFoundException;
 
 class RolesController extends AppController
