@@ -20,8 +20,9 @@
                 foreach ($allimgjson as $imgjson)
                 {
                     $url = $imgjson->{'textureLocation'};
+                    $time = $imgjson->{'fileTime'}
                     ?>
-                    <img src="http://content.warframe.com/MobileExport/<?= $url ?>" alt="">
+                    <img src="http://content.warframe.com/MobileExport/<?= $url ?>" alt="<?= $time ?>">
                     <?php
                 }
                 ?>
