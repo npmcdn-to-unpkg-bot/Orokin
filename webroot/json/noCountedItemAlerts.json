@@ -235,5 +235,11 @@
   },
   "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/IceStormMod" : {
     "value" : "Tempête de Glace"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessRhinoAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Rhino Thrak"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2ExcaliburAltHelmetBlueprint" : {
+    "value" : "Schéma Casque Excalibur Pendragon"
   }
 }

@@ -1,4 +1,4 @@
-<!-- Search Block -->
+<!-- Search Block --
 <div class="search-block">
     <a href="#" class="search-toggle glyphicon glyphicon-remove"></a>
     <form action="search.html">
