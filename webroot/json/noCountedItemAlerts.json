@@ -239,7 +239,10 @@
   "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessRhinoAltHelmetBlueprint" : {
     "value" : "Schéma Casque Rhino Thrak"
   },
-  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2ExcaliburAltHelmetBlueprint" : {
+  "/Lotus/StoreItems/Types/Recipes/Helmets/StatlessV2SSExcaliburAltHelmetBlueprint" : {
     "value" : "Schéma Casque Excalibur Pendragon"
+  },
+  "/Lotus/StoreItems/Types/Recipes/Weapons/CeramicDaggerBlueprint" : {
+    "value" : "Schéma Dague en Céramique"
   }
 }
