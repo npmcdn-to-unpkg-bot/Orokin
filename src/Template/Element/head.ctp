@@ -24,6 +24,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+
 <!-- Google Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -38,6 +39,9 @@
 
 <!-- Magnific Popup -->
 <?= $this->Html->css('/assets/bower_components/magnific-popup/dist/magnific-popup.css') ?>
+
+<!-- Revolution Slider -->
+<?= $this->Html->css('/assets/plugins/slider-revolution/examples&source/rs-plugin/css/settings.css') ?>
 
 <!-- Youplay -->
 <?= $this->Html->css('/assets/youplay/css/youplay.min.css') ?>

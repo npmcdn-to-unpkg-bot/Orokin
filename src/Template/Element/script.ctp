@@ -15,6 +15,13 @@
 <!-- Moment.js -->
 <?= $this->Html->script('/assets/bower_components/moment/min/moment.min.js') ?>
 <?= $this->Html->script('/assets/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js') ?>
+<!-- Revolution Slider -->
+<?= $this->Html->script('/assets/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.tools.min.js') ?>
+<?= $this->Html->script('/assets/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.revolution.min.js') ?>
+<!-- ImagesLoaded -->
+<?= $this->Html->script('/assets/bower_components/imagesloaded/imagesloaded.pkgd.min.js') ?>
+<!-- Isotope -->
+<?= $this->Html->script('/assets/bower_components/isotope/dist/isotope.pkgd.min.js') ?>
 <!-- Magnific Popup -->
 <?= $this->Html->script('/assets/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js') ?>
 <!-- Youplay -->
