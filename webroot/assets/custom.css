@@ -24,7 +24,7 @@ body {
     color: #fff;
 }
 
-.youplay-banner{
+.youplay-banner, .rs-youplay .slotholder > .slot .slotslide::after, .rs-youplay .slotholder > .tp-bgimg::after, .rs-youplay .tp-arr-iwrapper::after {
     background: transparent;
 }
 
