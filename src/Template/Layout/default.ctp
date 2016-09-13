@@ -4,6 +4,8 @@
         <?= $this->element('head') ?>
     </head>
     <body>
+        <?= $this->element('preloader') ?>
+
         <?= $this->element('header') ?>
 
         <!-- Main Content -->

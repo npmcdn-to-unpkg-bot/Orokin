@@ -54,7 +54,7 @@ body {
     width: 18%;
 }
 
-.navbar-youplay.navbar-small .navbar-header, .search-block {
+.navbar-youplay.navbar-small .navbar-header, .search-block, .preloader-wrapp {
     background: #0a0a0a;
 }
 
